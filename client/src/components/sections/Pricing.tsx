@@ -31,15 +31,6 @@ export default function Pricing() {
               }`}
               style={tier.featured ? { background: "linear-gradient(135deg, var(--mavrik-orange) 0%, var(--mavrik-orange-dark) 100%)" } : undefined}
             >
-              {tier.featured && (
-                <span
-                  className="absolute -top-3 right-6 text-xs font-bold px-3 py-1 rounded-full bg-white"
-                  style={{ color: "var(--mavrik-orange)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                >
-                  Most Popular
-                </span>
-              )}
-
               <h3
                 className={`text-xl font-bold mb-1 ${tier.featured ? "text-white" : "text-foreground"}`}
                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
