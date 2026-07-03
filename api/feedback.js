@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     rating,
     review: review.slice(0, 2000),
     improvement: typeof improvement === "string" ? improvement.slice(0, 2000) : "",
-    name: typeof name === "string" ? name.slice(0, 120) : "",
+    name: typeof name === "string" ? name.slice(0, 120) : "",         
     email: typeof email === "string" ? email.slice(0, 200) : "",
     at: new Date().toISOString(),
   };

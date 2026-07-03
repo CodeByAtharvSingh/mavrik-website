@@ -109,11 +109,6 @@ export default function Hero() {
         </div>
 
         <div className="fade-up delay-300 flex items-center justify-center gap-3 mt-8">
-          <div className="flex -space-x-2">
-            {["bg-orange-400", "bg-amber-500", "bg-red-400", "bg-orange-600"].map((c, i) => (
-              <div key={i} className={`w-7 h-7 rounded-full ${c} border-2 border-white`} />
-            ))}
-          </div>
           <span className="text-sm text-muted-foreground">
             <strong className="text-foreground">200+</strong> people already on the waitlist
           </span>
