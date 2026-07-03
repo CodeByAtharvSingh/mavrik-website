@@ -1,5 +1,6 @@
-import { ArrowRight, MessageSquareHeart } from "lucide-react";
-import { FEEDBACK_URL } from "@/data/site";
+import { ArrowRight, MessageSquareHeart, Star } from "lucide-react";
+import { Link } from "wouter";
+import { FEEDBACK_PATH } from "@/data/site";
 
 export default function EarlyAccess() {
   return (
@@ -23,18 +24,19 @@ export default function EarlyAccess() {
             Mavrik hasn't launched yet — so instead of asking you to trust a wall of reviews, we're asking what would make this a must-have for you. 200+ people are already on the waitlist, shaping the app before day one.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-            Every response goes directly to the small team building Mavrik. Once we launch, this is where real reviews from real users will live.
+            Rate Mavrik, share what excites you, and tell us where it can improve. Every response goes directly to the small team building it.
           </p>
 
-          <a
-            href={FEEDBACK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-mavrik px-7 py-3.5 text-base inline-flex items-center gap-2.5"
-          >
+          <div className="flex items-center justify-center gap-1 mb-6">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-5 h-5" fill="var(--mavrik-orange)" color="var(--mavrik-orange)" />
+            ))}
+          </div>
+
+          <Link href={FEEDBACK_PATH} className="btn-mavrik px-7 py-3.5 text-base inline-flex items-center gap-2.5">
             Share Your Feedback
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

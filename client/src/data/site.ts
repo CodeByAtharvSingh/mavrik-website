@@ -1,8 +1,9 @@
-// Registration and feedback are both handled by Tally (3rd-party forms), not our own backend.
+// Waitlist registration is handled by Tally (3rd-party form).
 export const WAITLIST_URL = "https://tally.so/r/Y59RKW";
-// TODO: swap this for a dedicated feedback-form Tally URL when you make one — reusing the
-// waitlist form for now so the site can ship as a static build with zero backend.
-export const FEEDBACK_URL = WAITLIST_URL;
+
+// Feedback is a native page on this site (star rating + review), backed by a
+// Vercel serverless function — see /api/feedback.js and pages/Feedback.tsx.
+export const FEEDBACK_PATH = "/feedback";
 
 export type SpeedTier = "Fast" | "Balanced" | "Powerful";
 

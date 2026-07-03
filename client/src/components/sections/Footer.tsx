@@ -71,7 +71,13 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <span>© 2026 Mavrik. All rights reserved.</span>
-          <div className="flex items-center gap-1" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <span
+            className="px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wide"
+            style={{ background: "var(--mavrik-orange)", color: "white" }}
+          >
+            Founder &amp; CEO — Atharv Singh
+          </span>
+          <div className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
             <span>macOS &amp; Windows — coming soon</span>
           </div>
