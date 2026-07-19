@@ -16,6 +16,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  // Over the sky hero (top of page) we use light text; once scrolled the bar
+  // turns white so dark text is used instead.
+  const overSky = !scrolled;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -27,7 +31,7 @@ export default function Navbar() {
           <img src={LOGO_MARK} alt="Mavrik" className="w-8 h-8 object-contain" />
           <span
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, letterSpacing: "0.04em" }}
-            className="text-lg text-foreground"
+            className={`text-lg transition-colors ${overSky ? "text-white" : "text-foreground"}`}
           >
             MAVRIK
           </span>
@@ -35,7 +39,15 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className={
+                overSky
+                  ? "text-sm font-medium text-white/85 hover:text-white transition-colors"
+                  : "nav-link"
+              }
+            >
               {item}
             </a>
           ))}
@@ -46,7 +58,12 @@ export default function Navbar() {
             href={WAITLIST_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-mavrik px-5 py-2.5 text-sm flex items-center gap-2"
+            className={
+              overSky
+                ? "px-5 py-2.5 text-sm font-bold rounded-full bg-white text-[var(--mavrik-orange)] hover:bg-white/90 transition-colors flex items-center gap-2"
+                : "btn-mavrik px-5 py-2.5 text-sm flex items-center gap-2"
+            }
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             <Download className="w-4 h-4" />
             Get Notified
@@ -54,14 +71,14 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+          className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
           <div className="w-5 flex flex-col gap-1.5">
-            <span className={`block h-0.5 bg-foreground transition-all duration-200 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-0.5 bg-foreground transition-all duration-200 ${mobileOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 bg-foreground transition-all duration-200 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </div>
         </button>
       </div>
