@@ -1,4 +1,5 @@
 import { Github, Globe, Twitter } from "lucide-react";
+import { Link } from "wouter";
 
 const LOGO_MARK = "/logo.png";
 
@@ -54,15 +55,23 @@ export default function Footer() {
               {[
                 { label: "FAQ", href: "#faq" },
                 { label: "Early Access", href: "#early-access" },
-                { label: "Contact", href: "mailto:support@mavrik.app" },
-                { label: "Privacy Policy", href: "#" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-white transition-colors">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+                { label: "Contact", href: "mailto:support@mavrik.in" },
+                { label: "Privacy Policy", href: "/privacy", internal: true },
+              ].map((item) =>
+                item.internal ? (
+                  <li key={item.label}>
+                    <Link href={item.href} className="hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={item.label}>
+                    <a href={item.href} className="hover:text-white transition-colors">
+                      {item.label}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>
