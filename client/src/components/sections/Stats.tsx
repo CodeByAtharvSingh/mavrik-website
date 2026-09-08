@@ -28,6 +28,8 @@ const TIER_BARS = [
   { label: "Powerful", pct: 46, count: "11 models" },
 ];
 
+const MAX_TIER_PCT = Math.max(...TIER_BARS.map((b) => b.pct));
+
 export default function Stats() {
   const ref = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(false);
@@ -71,10 +73,12 @@ export default function Stats() {
               {TIER_BARS.map((bar) => (
                 <div key={bar.label} className="flex flex-col items-center justify-end h-full">
                   <span className="text-sm font-bold mb-2">{bar.pct}%</span>
+                  {/* Heights are normalised against the largest tier so the tallest
+                      bar fills the track — fixed pixel heights left it stranded. */}
                   <div
-                    className="w-full rounded-xl"
+                    className="w-full rounded-xl transition-[height] duration-700 ease-out"
                     style={{
-                      height: `${bar.pct * 1.8}px`,
+                      height: started ? `${(bar.pct / MAX_TIER_PCT) * 82}%` : "0%",
                       background: "linear-gradient(180deg, var(--mavrik-orange-light) 0%, var(--mavrik-orange) 100%)",
                     }}
                   />
@@ -107,13 +111,9 @@ export default function Stats() {
               </div>
             </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Mavrik is built by a small team that doesn't want your data. Every model runs on your CPU or GPU, every file stays on disk, and every response is generated without a single network call. Interested in shaping what we build next?
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Mavrik is built by a small team that doesn't want your data. Every model runs on your CPU or GPU, every file stays on disk, and every response is generated without a single network call.
             </p>
-
-            <a href="#early-access" className="btn-mavrik px-7 py-3.5 text-base inline-flex items-center gap-2">
-              Join Early Access
-            </a>
           </div>
         </div>
       </div>
