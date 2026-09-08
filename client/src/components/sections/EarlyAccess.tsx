@@ -21,10 +21,10 @@ export default function EarlyAccess() {
             Help shape <span className="gradient-text">Mavrik.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Mavrik hasn't launched yet — so instead of asking you to trust a wall of reviews, we're asking what would make this a must-have for you. 200+ people are already on the waitlist, shaping the app before day one.
+            Mavrik is new, and it gets better with every piece of feedback. Tell us how it runs on your machine, which models you reach for, and what's missing.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-            Rate Mavrik, share what excites you, and tell us where it can improve. Every response goes directly to the small team building it.
+            Rate Mavrik, share what's working, and tell us where it can improve. Every response goes directly to the small team building it.
           </p>
 
           <div className="flex items-center justify-center gap-1 mb-6">

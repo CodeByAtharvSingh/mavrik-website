@@ -1,9 +1,9 @@
 import { Apple, AppWindow, ArrowRight, CheckCircle2 } from "lucide-react";
-import { WAITLIST_URL } from "@/data/site";
+import { STORE_URL } from "@/data/site";
 
 const PLATFORMS = [
-  { name: "macOS", icon: Apple, sub: "Apple Silicon & Intel" },
-  { name: "Windows", icon: AppWindow, sub: "Windows 10 & 11" },
+  { name: "Windows", icon: AppWindow, sub: "Windows 10 & 11", available: true },
+  { name: "macOS", icon: Apple, sub: "Apple Silicon & Intel", available: false },
 ];
 
 export default function DownloadCTA() {
@@ -34,17 +34,17 @@ export default function DownloadCTA() {
           style={{ color: "var(--mavrik-orange-light)", background: "rgba(232, 93, 4, 0.1)" }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-          Coming Soon — Free, No Account Required
+          Available Now — Free, No Account Required
         </div>
 
         <h2 className="fade-up delay-100 text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-          Be first to run
+          Start running
           <br />
           <span className="gradient-text">AI on your own machine.</span>
         </h2>
 
         <p className="fade-up delay-200 text-lg text-white/60 max-w-xl mx-auto mb-12 leading-relaxed">
-          Mavrik is finishing testing for macOS and Windows. Register now and we'll notify you the moment your download is ready — no subscription, no API key, no cloud.
+          Mavrik is out now on Windows, free from the Microsoft Store — no subscription, no API key, no cloud. A native macOS build is on the way.
         </p>
 
         <div className="fade-up delay-300 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
@@ -55,9 +55,13 @@ export default function DownloadCTA() {
               <div className="text-white/40 text-xs mb-3">{p.sub}</div>
               <span
                 className="inline-block text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
-                style={{ background: "rgba(232, 93, 4, 0.15)", color: "var(--mavrik-orange-light)" }}
+                style={
+                  p.available
+                    ? { background: "rgba(74, 222, 128, 0.15)", color: "#4ADE80" }
+                    : { background: "rgba(232, 93, 4, 0.15)", color: "var(--mavrik-orange-light)" }
+                }
               >
-                Coming Soon
+                {p.available ? "Available Now" : "Coming Soon"}
               </span>
             </div>
           ))}
@@ -65,12 +69,12 @@ export default function DownloadCTA() {
 
         <div className="fade-up delay-400 mb-10">
           <a
-            href={WAITLIST_URL}
+            href={STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-mavrik px-8 py-4 text-base inline-flex items-center gap-2.5"
           >
-            Register for Early Access
+            Get it from the Microsoft Store
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

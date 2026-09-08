@@ -33,17 +33,25 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               {[
-                { label: "Features", href: "#features" },
-                { label: "Models", href: "#models" },
-                { label: "Pricing", href: "#pricing" },
-                { label: "Download", href: "#download" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-white transition-colors">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+                { label: "Features", href: "/#features" },
+                { label: "Models", href: "/#models" },
+                { label: "Pricing", href: "/#pricing" },
+                { label: "Download", href: "/download", internal: true },
+              ].map((item) =>
+                item.internal ? (
+                  <li key={item.label}>
+                    <Link href={item.href} className="hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={item.label}>
+                    <a href={item.href} className="hover:text-white transition-colors">
+                      {item.label}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -53,8 +61,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               {[
-                { label: "FAQ", href: "#faq" },
-                { label: "Early Access", href: "#early-access" },
+                { label: "FAQ", href: "/#faq" },
+                { label: "Feedback", href: "/feedback", internal: true },
                 { label: "Contact", href: "mailto:support@mavrik.in" },
                 { label: "Privacy Policy", href: "/privacy", internal: true },
               ].map((item) =>
@@ -87,8 +95,8 @@ export default function Footer() {
             Founder &amp; CEO — Atharv Singh
           </span>
           <div className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
-            <span>macOS &amp; Windows — coming soon</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            <span>Available now on Windows</span>
           </div>
         </div>
       </div>

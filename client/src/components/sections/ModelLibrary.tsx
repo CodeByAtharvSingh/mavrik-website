@@ -67,9 +67,6 @@ export default function ModelLibrary() {
 
               <p className="text-sm text-muted-foreground leading-relaxed flex-1">{m.useCase}</p>
 
-              <div className="text-xs font-semibold px-3 py-2 rounded-lg text-center border border-dashed border-border text-muted-foreground">
-                Coming Soon
-              </div>
             </div>
           ))}
         </div>

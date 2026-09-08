@@ -7,11 +7,13 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Feedback from "./pages/Feedback";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import DownloadPage from "./pages/Download";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/download"} component={DownloadPage} />
       <Route path={"/feedback"} component={Feedback} />
       <Route path={"/privacy"} component={PrivacyPolicy} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />

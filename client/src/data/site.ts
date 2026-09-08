@@ -1,5 +1,9 @@
-// Waitlist registration is handled by Tally (3rd-party form).
-export const WAITLIST_URL = "https://tally.so/r/Y59RKW";
+// Microsoft Store listing for the Windows build. Locale params (hl/gl) are
+// intentionally omitted so the Store resolves to each visitor's own region.
+export const STORE_URL = "https://apps.microsoft.com/detail/9ppfcng3l2js";
+
+// On-site download page listing available platforms.
+export const DOWNLOAD_PATH = "/download";
 
 // Feedback is a native page on this site (star rating + review), backed by a
 // Vercel serverless function — see /api/feedback.js and pages/Feedback.tsx.
@@ -19,7 +23,7 @@ export interface ModelEntry {
 // Pulled from the actual Mavrik model catalog (sidecar/main.py) — real models,
 // real sizes, real context windows. Nothing here is invented.
 export const MODELS: ModelEntry[] = [
-  { name: "TinyLlama 1.1B", size: "0.7 GB", tier: "Fast", context: "4k context", useCase: "Ultra-light and lightning fast. Runs on any Mac." },
+  { name: "TinyLlama 1.1B", size: "0.7 GB", tier: "Fast", context: "4k context", useCase: "Ultra-light and lightning fast. Runs on almost any machine." },
   { name: "Qwen 2.5 1.5B", size: "0.9 GB", tier: "Fast", context: "32k context", useCase: "Compact multilingual model with strong everyday chat quality." },
   { name: "StableLM 2 1.6B", size: "0.95 GB", tier: "Fast", context: "4k context", useCase: "Stability AI's tiny but sharp chat model." },
   { name: "Gemma 2 2B", size: "1.6 GB", tier: "Fast", context: "8k context", useCase: "Google's efficient 2B model. Surprisingly capable for its size." },
@@ -42,7 +46,7 @@ export const MODELS: ModelEntry[] = [
   { name: "Llama 3 70B", size: "42 GB", tier: "Powerful", context: "8k context", useCase: "Meta's 70B powerhouse. Needs 64 GB RAM. Near GPT-4 quality.", pro: true },
   { name: "DeepSeek R1 70B", size: "42 GB", tier: "Powerful", context: "32k context", useCase: "DeepSeek's best reasoning model. Rivals o1 on math benchmarks.", pro: true },
   { name: "Qwen 2.5 72B", size: "43 GB", tier: "Powerful", context: "32k context", useCase: "Top-tier 72B. One of the best open models. Needs 64 GB RAM.", pro: true },
-  { name: "Llama 3.1 120B", size: "72 GB", tier: "Powerful", context: "128k context", useCase: "Meta's largest open model. Mac Studio Ultra with 192 GB RAM recommended.", pro: true },
+  { name: "Llama 3.1 120B", size: "72 GB", tier: "Powerful", context: "128k context", useCase: "Meta's largest open model. A workstation with 192 GB RAM is recommended.", pro: true },
 ];
 
 export const TIER_COLOR: Record<SpeedTier, string> = {
@@ -76,7 +80,7 @@ export const FEATURES: Feature[] = [
   {
     icon: "Eye",
     title: "Ghost Index",
-    desc: "Instantly search and analyze documents up to 450 pages — indexed and processed entirely on your machine.",
+    desc: "Instantly search and analyze massive documents — 1,000+ pages on Pro — indexed and processed entirely on your machine.",
   },
   {
     icon: "Cpu",
@@ -105,8 +109,8 @@ export const FEATURES: Feature[] = [
   },
   {
     icon: "Laptop",
-    title: "macOS & Windows",
-    desc: "Built natively for Apple Silicon and Intel Macs, with Windows 10/11 support on the way.",
+    title: "Windows Native",
+    desc: "Available now on the Microsoft Store for Windows 10/11. A native macOS build for Apple Silicon and Intel is in the works.",
   },
 ];
 
@@ -117,7 +121,7 @@ export interface Step {
 }
 
 export const STEPS: Step[] = [
-  { num: "01", title: "Download Mavrik", desc: "Get the free desktop app for macOS or Windows. One installer, no dependencies." },
+  { num: "01", title: "Download Mavrik", desc: "Install free from the Microsoft Store on Windows 10/11. One click, no dependencies." },
   { num: "02", title: "Auto Optimizer Scans Your Machine", desc: "Mavrik checks your CPU and RAM and scores every model for fit before you download one." },
   { num: "03", title: "Download a Model, Once", desc: "Pick the model that fits your hardware. It lives on your disk — no subscriptions, no API keys." },
   { num: "04", title: "Chat, Search, Analyze", desc: "Talk to your model, run Ghost Index on documents, and monitor your system — all in one app." },
@@ -141,44 +145,44 @@ export const PRICING: PricingTier[] = [
     price: "$0",
     billing: "forever",
     note: "Perfect for getting started",
-    cta: "Join the Waitlist",
+    cta: "Download Free",
     features: [
-      "2 model downloads",
-      "5 images per chat",
-      "8k token context",
-      "Basic file analysis (TXT, PDF up to 50 pages)",
-      "Community support",
+      "Unlimited model downloads",
+      "Up to 32k token context",
+      "Ghost Index: basic file chat (up to 50 pages)",
+      "Single-turn conversations",
+      "Auto Optimizer advice included",
     ],
   },
   {
     id: "pro",
     name: "Pro",
-    price: "$9.99",
+    price: "$12",
     billing: "per month",
-    note: "Best for professionals",
-    cta: "Get Notified",
+    note: "For big documents & automation",
+    cta: "Start Free Trial",
     featured: true,
     features: [
-      "10 model downloads",
-      "50 images per chat",
-      "32k token context",
-      "Advanced file analysis (PDF, DOCX up to 200 pages)",
-      "Priority support (24h response)",
+      "Unlimited model downloads",
+      "Up to 128k long-context window",
+      "Advanced Document RAG: chat with 1,000+ pages",
+      "Cross-reference multiple files at once",
+      "Local Agent Workflows: multi-step automated tasks",
     ],
   },
   {
     id: "max",
-    name: "Max",
-    price: "$29.99",
+    name: "Max / Team",
+    price: "$29",
     billing: "per month",
-    note: "For power users",
-    cta: "Get Notified",
+    note: "The enterprise powerhouse",
+    cta: "Start Free Trial",
     features: [
-      "All 25+ models",
-      "Unlimited images per chat",
-      "128k token context",
-      "Full Ghost Index (all formats, up to 450 pages)",
-      "Priority support + early access",
+      "Unlimited model downloads",
+      "Unlimited context, up to each model's max",
+      "Deep Knowledge Base: local folders, databases & note apps (Obsidian/Notion) — offline",
+      "Shared Local Cache & Nodes: your team on one local office server",
+      "Fully private alternative to enterprise cloud AI",
     ],
   },
 ];
@@ -191,7 +195,7 @@ export interface FaqItem {
 export const FAQS: FaqItem[] = [
   {
     q: "Is Mavrik free?",
-    a: "Yes. The Free tier is free forever, with 2 model downloads, 5 images per chat, and 8k context. Pro and Max unlock more models, larger context windows, and deeper file analysis once they launch.",
+    a: "Yes. The Free tier is free forever, with unlimited model downloads, up to 32k context, and basic Ghost Index file chat. Pro ($12/mo) unlocks 128k long-context, 1,000+ page document RAG, and local agent workflows; Max ($29/mo) adds a deep knowledge base and team features. Every install starts with a 21-day trial of the paid features.",
   },
   {
     q: "How is my data protected?",
@@ -199,7 +203,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "Which platforms are supported?",
-    a: "Mavrik is launching for macOS (Apple Silicon and Intel) and Windows 10/11. Both are in active development — join the waitlist to get notified the moment your platform is ready.",
+    a: "Mavrik is available now on Windows 10 and 11 — install it free from the Microsoft Store. A native macOS build for Apple Silicon and Intel is in active development and will follow.",
   },
   {
     q: "How much disk space do I need?",
@@ -211,7 +215,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "What is Ghost Index?",
-    a: "Ghost Index is Mavrik's local document engine. It reads and indexes PDFs up to 450 pages entirely on-device, so you can ask questions about large documents without uploading anything.",
+    a: "Ghost Index is Mavrik's local document engine. It reads and indexes PDFs entirely on-device — basic file chat on Free (up to 50 pages), and advanced document RAG across 1,000+ pages with cross-file referencing on Pro.",
   },
   {
     q: "Does Mavrik support image or vision analysis?",
@@ -226,7 +230,7 @@ export const FAQS: FaqItem[] = [
     a: "Yes — use the feedback link inside the app or reach out at the contact below. We're a small team building this in the open and read everything.",
   },
   {
-    q: "When does Mavrik launch?",
-    a: "Both macOS and Windows builds are in final testing now. Join the waitlist below and you'll be the first to know when downloads go live.",
+    q: "How do I install Mavrik?",
+    a: "On Windows 10 or 11, install it free from the Microsoft Store — the download page has a direct link. There is no account or sign-up required, and it includes a 21-day trial of the paid features.",
   },
 ];

@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { PRICING, WAITLIST_URL } from "@/data/site";
+import { PRICING, STORE_URL } from "@/data/site";
 
 export default function Pricing() {
   return (
@@ -16,7 +16,7 @@ export default function Pricing() {
             Simple, <span className="gradient-text">transparent pricing.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Prices shown in USD. Nothing is billed today — plans activate when Mavrik launches for your platform.
+            Prices shown in USD. Every install starts with a free 21-day trial of the paid features — no card required.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function Pricing() {
               </div>
 
               <a
-                href={WAITLIST_URL}
+                href={STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`text-center px-5 py-3 rounded-xl text-sm font-bold mb-8 transition-transform active:scale-95 ${

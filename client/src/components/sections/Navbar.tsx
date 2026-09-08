@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
-import { WAITLIST_URL } from "@/data/site";
+import { DOWNLOAD_PATH } from "@/data/site";
+import { Link } from "wouter";
 
 const LOGO_MARK = "/logo.png";
 
@@ -54,10 +55,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href={WAITLIST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={DOWNLOAD_PATH}
             className={
               overSky
                 ? "px-5 py-2.5 text-sm font-bold rounded-full bg-white text-[var(--mavrik-orange)] hover:bg-white/90 transition-colors flex items-center gap-2"
@@ -66,8 +65,8 @@ export default function Navbar() {
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             <Download className="w-4 h-4" />
-            Get Notified
-          </a>
+            Download Now
+          </Link>
         </div>
 
         <button
@@ -95,14 +94,13 @@ export default function Navbar() {
               {item}
             </a>
           ))}
-          <a
-            href={WAITLIST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={DOWNLOAD_PATH}
             className="btn-mavrik px-5 py-2.5 text-sm text-center mt-2"
+            onClick={() => setMobileOpen(false)}
           >
-            Get Notified
-          </a>
+            Download Now
+          </Link>
         </div>
       )}
     </nav>

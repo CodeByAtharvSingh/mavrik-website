@@ -9,11 +9,12 @@ import {
   Paperclip,
   Search,
   Send,
+  Download,
   Star,
-  Users,
   WifiOff,
 } from "lucide-react";
-import { WAITLIST_URL } from "@/data/site";
+import { DOWNLOAD_PATH, STORE_URL } from "@/data/site";
+import { Link } from "wouter";
 
 const ACHIEVEMENTS = [
   {
@@ -31,11 +32,11 @@ const ACHIEVEMENTS = [
     linkLabel: "Browse the library",
   },
   {
-    icon: Users,
-    title: "200+ on the Waitlist",
-    desc: "Early testers already shaping Mavrik before it ships for macOS and Windows.",
-    href: WAITLIST_URL,
-    linkLabel: "Join the waitlist",
+    icon: Download,
+    title: "Free on the Microsoft Store",
+    desc: "Install on Windows 10 or 11 in one click — no account, and a 21-day trial of the paid features.",
+    href: DOWNLOAD_PATH,
+    linkLabel: "Get Mavrik",
   },
 ];
 
@@ -179,7 +180,7 @@ export default function Hero() {
           <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
             <div className="fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/40 bg-white/15 backdrop-blur-sm text-xs font-semibold tracking-wide text-white">
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              macOS &amp; Windows — Coming Soon
+              Now available on Windows
             </div>
 
             <h1
@@ -197,13 +198,13 @@ export default function Hero() {
 
             <div className="fade-up delay-300 flex flex-wrap items-center justify-center gap-3 mt-2">
               <a
-                href={WAITLIST_URL}
+                href={STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-3.5 text-base font-bold rounded-full bg-white text-[var(--mavrik-orange)] hover:bg-white/90 transition-all active:scale-[0.98] flex items-center gap-2.5 shadow-lg"
                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
-                Get Notified at Launch
+                Download for Windows
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
@@ -222,7 +223,7 @@ export default function Hero() {
                 ))}
               </div>
               <span className="text-sm text-white/90">
-                <strong>200+</strong> people already on the waitlist
+                <strong>200+</strong> signed up before launch
               </span>
             </div>
           </div>
@@ -255,16 +256,27 @@ export default function Hero() {
                 </div>
                 <h3 className="text-sm font-bold mb-1.5">{a.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{a.desc}</p>
-                <a
-                  href={a.href}
-                  target={a.href.startsWith("http") ? "_blank" : undefined}
-                  rel={a.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-1 text-xs font-semibold"
-                  style={{ color: "var(--mavrik-orange)" }}
-                >
-                  {a.linkLabel}
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
+                {a.href.startsWith("/") ? (
+                  <Link
+                    href={a.href}
+                    className="inline-flex items-center gap-1 text-xs font-semibold"
+                    style={{ color: "var(--mavrik-orange)" }}
+                  >
+                    {a.linkLabel}
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                ) : (
+                  <a
+                    href={a.href}
+                    target={a.href.startsWith("http") ? "_blank" : undefined}
+                    rel={a.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="inline-flex items-center gap-1 text-xs font-semibold"
+                    style={{ color: "var(--mavrik-orange)" }}
+                  >
+                    {a.linkLabel}
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
             ))}
           </div>

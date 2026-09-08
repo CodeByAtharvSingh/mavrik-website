@@ -47,7 +47,7 @@ export default function Stats() {
   }, []);
 
   const c1 = useCounter(25, 1000, started);
-  const c2 = useCounter(450, 1400, started);
+  const c2 = useCounter(1000, 1400, started);
 
   return (
     <section className="py-28" ref={ref}>
@@ -98,7 +98,7 @@ export default function Stats() {
                 <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">AI models included</div>
               </div>
               <div>
-                <div className="stat-number text-5xl mb-1">{c2}</div>
+                <div className="stat-number text-5xl mb-1">{c2.toLocaleString()}+</div>
                 <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">pages per PDF via Ghost Index</div>
               </div>
               <div>
