@@ -366,6 +366,10 @@ export const FAQS: FaqItem[] = [
     a: "All processing happens locally on your machine. Conversations, files, and chat history never leave your device — Mavrik makes zero network calls except the model downloads you explicitly start.",
   },
   {
+    q: "Is Mavrik a wrapper?",
+    a: "No. Mavrik is built from scratch — a Rust core with a purpose-built Python inference backend, not a user interface bolted onto someone else's tool. Model loading, memory handling and the request path are tuned specifically for running on your own hardware rather than inherited from a general-purpose runtime, which is where Mavrik's speed advantage over local AI tools like Ollama and LM Studio comes from.",
+  },
+  {
     q: "Which platforms are supported?",
     a: "Mavrik is available now on Windows 10 and 11 — install it free from the Microsoft Store. A native macOS build for Apple Silicon and Intel is in active development and will follow.",
   },
