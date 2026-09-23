@@ -13,8 +13,58 @@ import {
   Star,
   WifiOff,
 } from "lucide-react";
-import { DOWNLOAD_PATH, STORE_URL } from "@/data/site";
+import { useEffect, useMemo, useState } from "react";
+import { DOWNLOAD_PATH, MODELS, STORE_URL } from "@/data/site";
 import { Link } from "wouter";
+
+/* Cycles the whole model catalog through the hero so it shows off the real
+   library instead of one hard-coded name. */
+function useCyclingModel(intervalMs = 800) {
+  // Shuffle once per visit: the catalog is ordered by tier, so playing it
+  // straight would mean ~37s of the smallest models before anything else.
+  const order = useMemo(() => {
+    const a = [...MODELS];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }, []);
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    // Rapidly swapping text is exactly what reduced-motion users opt out of.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let timer: number | undefined;
+    const stop = () => {
+      if (timer) window.clearInterval(timer);
+      timer = undefined;
+    };
+    const start = () => {
+      stop();
+      timer = window.setInterval(() => setI((n) => (n + 1) % order.length), intervalMs);
+    };
+    const onVisibility = () => (document.hidden ? stop() : start());
+
+    start();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, [order.length, intervalMs]);
+
+  return order[i];
+}
+
+/* Names run 7-33 characters. Step the size down for the long ones so the
+   floating card keeps a constant width instead of resizing every tick. */
+function modelNameSize(name: string) {
+  if (name.length > 26) return "text-[11px]";
+  if (name.length > 20) return "text-[13px]";
+  return "text-sm";
+}
 
 const ACHIEVEMENTS = [
   {
@@ -43,6 +93,8 @@ const ACHIEVEMENTS = [
 /* Faithful mock of the real Mavrik desktop app (sidebar, model pill, chat
    input) — matches the actual UI screenshot, with the chat area left clean. */
 function AppWindowMock() {
+  const model = useCyclingModel(800);
+
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       <div className="rounded-2xl shadow-2xl border border-black/5 overflow-hidden text-left bg-[#F4F1EC]">
@@ -95,9 +147,11 @@ function AppWindowMock() {
           {/* Main chat panel */}
           <div className="rounded-xl bg-white shadow-sm flex flex-col p-4">
             <div className="flex items-center justify-between">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F8F6F2] shadow-sm px-3 py-1.5 text-[11px] font-semibold text-foreground">
-                Llama 3 8B
-                <span className="w-1 h-1 rounded-full" style={{ background: "var(--mavrik-orange)" }} />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F8F6F2] shadow-sm px-3 py-1.5 text-[11px] font-semibold text-foreground max-w-[190px]">
+                <span key={model.name} className="truncate animate-[modelSwap_260ms_ease-out]" title={model.name}>
+                  {model.name}
+                </span>
+                <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "var(--mavrik-orange)" }} />
               </span>
               <span className="rounded-full bg-[#F8F6F2] shadow-sm px-3 py-1.5 text-[11px] font-semibold text-foreground">New Chat</span>
             </div>
@@ -129,8 +183,16 @@ function AppWindowMock() {
           <Brain className="w-4 h-4" style={{ color: "var(--mavrik-orange)" }} />
         </div>
         <div>
-          <div className="text-xs text-muted-foreground">Active Model</div>
-          <div className="text-sm font-semibold">Llama 3 8B</div>
+          <div className="text-xs text-muted-foreground">Active Models</div>
+          <div className="w-[182px] overflow-hidden">
+            <div
+              key={model.name}
+              className={`font-semibold truncate animate-[modelSwap_260ms_ease-out] ${modelNameSize(model.name)}`}
+              title={model.name}
+            >
+              {model.name}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -235,6 +297,10 @@ export default function Hero() {
         </div>
 
         <style>{`
+          @keyframes modelSwap {
+            from { opacity: 0; transform: translateY(5px); }
+            to   { opacity: 1; transform: translateY(0); }
+          }
           @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-12px); }
