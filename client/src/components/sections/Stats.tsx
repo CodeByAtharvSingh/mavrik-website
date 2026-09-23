@@ -21,11 +21,12 @@ function useCounter(target: number, duration = 1400, started = false) {
   return count;
 }
 
-// Real tier split from the 24-model catalog (sidecar/main.py): 6 Fast, 7 Balanced, 11 Powerful.
+// Real tier split from the shipping 179-model catalog — see MODELS in data/site.ts.
 const TIER_BARS = [
-  { label: "Fast", pct: 25, count: "6 models" },
-  { label: "Balanced", pct: 29, count: "7 models" },
-  { label: "Powerful", pct: 46, count: "11 models" },
+  { label: "Light", pct: 26, count: "46 models" },
+  { label: "Balanced", pct: 35, count: "63 models" },
+  { label: "Capable", pct: 26, count: "46 models" },
+  { label: "Vision", pct: 13, count: "24 models" },
 ];
 
 const MAX_TIER_PCT = Math.max(...TIER_BARS.map((b) => b.pct));
@@ -48,7 +49,7 @@ export default function Stats() {
     return () => observer.disconnect();
   }, []);
 
-  const c1 = useCounter(25, 1000, started);
+  const c1 = useCounter(179, 1200, started);
   const c2 = useCounter(1000, 1400, started);
 
   return (
@@ -69,7 +70,7 @@ export default function Stats() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="fade-up delay-100 rounded-2xl p-8" style={{ background: "var(--mavrik-orange-muted)" }}>
-            <div className="grid grid-cols-3 gap-6 items-end h-48 mb-6">
+            <div className="grid grid-cols-4 gap-4 items-end h-48 mb-6">
               {TIER_BARS.map((bar) => (
                 <div key={bar.label} className="flex flex-col items-center justify-end h-full">
                   <span className="text-sm font-bold mb-2">{bar.pct}%</span>
@@ -85,7 +86,7 @@ export default function Stats() {
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-3 gap-6 text-center">
+            <div className="grid grid-cols-4 gap-4 text-center">
               {TIER_BARS.map((bar) => (
                 <div key={bar.label}>
                   <div className="text-xs font-bold">{bar.label}</div>
@@ -98,7 +99,7 @@ export default function Stats() {
           <div className="fade-up delay-200">
             <div className="flex flex-wrap gap-10 mb-8">
               <div>
-                <div className="stat-number text-5xl mb-1">{c1}+</div>
+                <div className="stat-number text-5xl mb-1">{c1}</div>
                 <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">AI models included</div>
               </div>
               <div>

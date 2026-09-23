@@ -176,7 +176,7 @@ export default function PrivacyPolicy() {
             </P>
             <UL>
               <LI>Your prompts, conversations and chat history</LI>
-              <LI>Any files, documents or PDFs you open or analyse (including Ghost Index document indexes)</LI>
+              <LI>Any files, documents, PDFs or images you open or analyse (including Ghost Index document indexes, and images read by on-device vision models)</LI>
               <LI>The AI models you download, and all AI inference performed with them</LI>
               <LI>Your application settings and preferences</LI>
               <LI>System performance readings shown by Auto Optimizer (CPU and memory usage)</LI>
@@ -276,7 +276,7 @@ export default function PrivacyPolicy() {
             <div className="space-y-2.5 mb-5">
               {[
                 "Sell, rent or trade your personal data to anyone",
-                "Read, upload, or store your conversations, prompts, or documents",
+                "Read, upload, or store your conversations, prompts, documents, or images",
                 "Use your files or chats to train AI models",
                 "Include telemetry, analytics or crash reporting in the desktop application",
                 "Require an account, sign-in, or personal information to use the app",

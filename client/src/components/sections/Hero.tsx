@@ -26,8 +26,8 @@ const ACHIEVEMENTS = [
   },
   {
     icon: Brain,
-    title: "25+ Local AI Models",
-    desc: "From TinyLlama to Llama 3 70B, each one scored against your exact hardware.",
+    title: "170+ Local AI Models",
+    desc: "Text, code and vision models — from 0.11 GB up to 70B — each scored against your exact hardware.",
     href: "#models",
     linkLabel: "Browse the library",
   },
