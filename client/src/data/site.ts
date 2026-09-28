@@ -244,7 +244,7 @@ export const FEATURES: Feature[] = [
   {
     icon: "Eye",
     title: "Ghost Index",
-    desc: "Instantly search and analyze massive documents — 1,000+ pages on Pro — indexed and processed entirely on your machine.",
+    desc: "Instantly search and analyze massive documents, up to 1,000+ pages on Pro, indexed and processed entirely on your machine.",
   },
   {
     icon: "Cpu",
@@ -287,8 +287,8 @@ export interface Step {
 export const STEPS: Step[] = [
   { num: "01", title: "Download Mavrik", desc: "Install free from the Microsoft Store on Windows 10/11. One click, no dependencies." },
   { num: "02", title: "Auto Optimizer Scans Your Machine", desc: "Mavrik checks your CPU and RAM and scores every model for fit before you download one." },
-  { num: "03", title: "Download a Model, Once", desc: "Pick the model that fits your hardware. It lives on your disk — no subscriptions, no API keys." },
-  { num: "04", title: "Chat, Search, Analyze", desc: "Talk to your model, run Ghost Index on documents, and monitor your system — all in one app." },
+  { num: "03", title: "Download a Model, Once", desc: "Pick the model that fits your hardware. It lives on your disk. No subscriptions, no API keys." },
+  { num: "04", title: "Chat, Search, Analyze", desc: "Talk to your model, run Ghost Index on documents, and monitor your system, all in one app." },
 ];
 
 export interface PricingTier {
@@ -344,7 +344,7 @@ export const PRICING: PricingTier[] = [
     features: [
       "Unlimited model downloads",
       "Unlimited context, up to each model's max",
-      "Deep Knowledge Base: local folders, databases & note apps (Obsidian/Notion) — offline",
+      "Deep Knowledge Base: local folders, databases & note apps (Obsidian/Notion), all offline",
       "Shared Local Cache & Nodes: your team on one local office server",
       "Fully private alternative to enterprise cloud AI",
     ],
@@ -363,15 +363,15 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "How is my data protected?",
-    a: "All processing happens locally on your machine. Conversations, files, and chat history never leave your device — Mavrik makes zero network calls except the model downloads you explicitly start.",
+    a: "All processing happens locally on your machine. Conversations, files, and chat history never leave your device. Mavrik makes zero network calls except the model downloads you explicitly start.",
   },
   {
     q: "Is Mavrik a wrapper?",
-    a: "No. Mavrik is built from scratch — a Rust core with a purpose-built Python inference backend, not a user interface bolted onto someone else's tool. Model loading, memory handling and the request path are tuned specifically for running on your own hardware rather than inherited from a general-purpose runtime, which is where Mavrik's speed advantage over local AI tools like Ollama and LM Studio comes from.",
+    a: "No. Mavrik is built from scratch, with a Rust core and a purpose-built Python inference backend, not a user interface bolted onto someone else's tool. Model loading, memory handling and the request path are tuned specifically for running on your own hardware rather than inherited from a general-purpose runtime, which is where Mavrik's speed advantage over local AI tools like Ollama and LM Studio comes from.",
   },
   {
     q: "Which platforms are supported?",
-    a: "Mavrik is available now on Windows 10 and 11 — install it free from the Microsoft Store. A native macOS build for Apple Silicon and Intel is in active development and will follow.",
+    a: "Mavrik is available now on Windows 10 and 11. Install it free from the Microsoft Store. A native macOS build for Apple Silicon and Intel is in active development and will follow.",
   },
   {
     q: "How much disk space do I need?",
@@ -383,11 +383,11 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "What is Ghost Index?",
-    a: "Ghost Index is Mavrik's local document engine. It reads and indexes PDFs entirely on-device — basic file chat on Free (up to 50 pages), and advanced document RAG across 1,000+ pages with cross-file referencing on Pro.",
+    a: "Ghost Index is Mavrik's local document engine. It reads and indexes PDFs entirely on-device: basic file chat on Free (up to 50 pages), and advanced document RAG across 1,000+ pages with cross-file referencing on Pro.",
   },
   {
     q: "Does Mavrik support image or vision analysis?",
-    a: "Yes. The library includes 24 vision models — from SmolVLM 500M up to Qwen 2.5 VL 72B — that read images entirely on your device. A few, like Qwen 2.5 Omni and the Gemma 4 builds, handle audio too. Download a vision model and you can ask questions about screenshots, diagrams and photos offline.",
+    a: "Yes. The library includes 24 vision models, from SmolVLM 500M up to Qwen 2.5 VL 72B, that read images entirely on your device. A few, like Qwen 2.5 Omni and the Gemma 4 builds, handle audio too. Download a vision model and you can ask questions about screenshots, diagrams and photos offline.",
   },
   {
     q: "Is there any telemetry or tracking?",
@@ -395,10 +395,10 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "Can I report bugs or request features?",
-    a: "Yes — use the feedback link inside the app or reach out at the contact below. We're a small team building this in the open and read everything.",
+    a: "Yes. Use the feedback link inside the app or reach out at the contact below. We're a small team building this in the open and read everything.",
   },
   {
     q: "How do I install Mavrik?",
-    a: "On Windows 10 or 11, install it free from the Microsoft Store — the download page has a direct link. There is no account or sign-up required, and it includes a 21-day trial of the paid features.",
+    a: "On Windows 10 or 11, install it free from the Microsoft Store. The download page has a direct link. There is no account or sign-up required, and it includes a 21-day trial of the paid features.",
   },
 ];

@@ -36,7 +36,7 @@ export default function ModelLibrary() {
             Choose your <span className="gradient-text">AI model.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            {MODELS.length} models across four tiers — the exact catalog shipping inside the app, from a 0.11 GB
+            {MODELS.length} models across four tiers. This is the exact catalog shipping inside the app, from a 0.11 GB
             featherweight to a 96 GB frontier model. Mavrik scores each one against your hardware, so you always know
             what will actually run well before you download it.
           </p>
@@ -109,7 +109,7 @@ export default function ModelLibrary() {
           {(Object.keys(TIER_COLOR) as ModelTier[]).map((t) => (
             <span key={t} className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full" style={{ background: TIER_COLOR[t] }} />
-              <strong className="text-foreground font-semibold">{t}</strong> — {TIER_BLURB[t]}
+              <strong className="text-foreground font-semibold">{t}</strong>: {TIER_BLURB[t]}
             </span>
           ))}
         </div>

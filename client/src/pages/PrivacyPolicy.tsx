@@ -85,7 +85,7 @@ export default function PrivacyPolicy() {
               Effective date: {EFFECTIVE_DATE} · Last updated: {EFFECTIVE_DATE}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              This policy explains what data Mavrik does and does not collect — covering both the Mavrik desktop
+              This policy explains what data Mavrik does and does not collect, covering both the Mavrik desktop
               application and the website at mavrik.in.
             </p>
 
@@ -129,9 +129,9 @@ export default function PrivacyPolicy() {
             <H2 id="who-we-are">1. Who we are</H2>
             <P>
               Mavrik is an independent software project developed and published by <strong>Atharv Singh</strong>, an
-              individual developer based in India. For the purposes of applicable data protection law — including
+              individual developer based in India. For the purposes of applicable data protection law, including
               India's Digital Personal Data Protection Act, 2023 (DPDP Act), the EU/UK General Data Protection
-              Regulation (GDPR), and the California Consumer Privacy Act (CCPA/CPRA) — Atharv Singh is the data
+              Regulation (GDPR), and the California Consumer Privacy Act (CCPA/CPRA), Atharv Singh is the data
               controller (or equivalent) for any personal data described in this policy.
             </P>
             <P>
@@ -154,10 +154,10 @@ export default function PrivacyPolicy() {
             </P>
             <UL>
               <LI>
-                <strong>The Mavrik desktop application</strong> — collects no personal data at all. See Section 3.
+                <strong>The Mavrik desktop application</strong> collects no personal data at all. See Section 3.
               </LI>
               <LI>
-                <strong>The Mavrik website (mavrik.in)</strong> — a normal marketing website that uses advertising and
+                <strong>The Mavrik website (mavrik.in)</strong> is a normal marketing website that uses advertising and
                 optional forms, and therefore does collect some limited data. See Section 4.
               </LI>
             </UL>
@@ -252,7 +252,7 @@ export default function PrivacyPolicy() {
               >
                 Google's partner-site policy
               </a>
-              . Advertising is present only on the website — the desktop application contains no advertising and no ad
+              . Advertising is present only on the website. The desktop application contains no advertising and no ad
               tracking of any kind.
             </P>
 
@@ -296,16 +296,16 @@ export default function PrivacyPolicy() {
             </P>
             <UL>
               <LI>
-                <strong>Vercel</strong> — website hosting, server logs, and feedback storage.
+                <strong>Vercel</strong> handles website hosting, server logs, and feedback storage.
               </LI>
               <LI>
-                <strong>Google AdSense</strong> — advertising on the website only.
+                <strong>Google AdSense</strong> serves advertising on the website only.
               </LI>
               <LI>
-                <strong>Tally</strong> — waitlist form processing, if you choose to submit it.
+                <strong>Tally</strong> processes the waitlist form, if you choose to submit it.
               </LI>
               <LI>
-                <strong>Hugging Face</strong> — hosts the AI model files you choose to download in the app.
+                <strong>Hugging Face</strong> hosts the AI model files you choose to download in the app.
               </LI>
             </UL>
             <P>
@@ -327,19 +327,19 @@ export default function PrivacyPolicy() {
             <H2 id="retention">8. Data retention</H2>
             <UL>
               <LI>
-                <strong>App data</strong> — stored only on your own device, for as long as you keep it. We hold no copy
+                <strong>App data</strong> is stored only on your own device, for as long as you keep it. We hold no copy
                 and therefore cannot retain, restore or delete it on your behalf.
               </LI>
               <LI>
-                <strong>Waitlist entries</strong> — kept until Mavrik launches and the launch notification has been
+                <strong>Waitlist entries</strong> are kept until Mavrik launches and the launch notification has been
                 sent, or until you ask us to delete them, whichever comes first.
               </LI>
               <LI>
-                <strong>Feedback submissions</strong> — kept for as long as needed to act on the feedback and improve
+                <strong>Feedback submissions</strong> are kept for as long as needed to act on the feedback and improve
                 the product, or until you ask us to delete them.
               </LI>
               <LI>
-                <strong>Server logs</strong> — retained on a short rolling basis by our hosting provider for security
+                <strong>Server logs</strong> are retained on a short rolling basis by our hosting provider for security
                 and operational purposes.
               </LI>
             </UL>
@@ -349,7 +349,7 @@ export default function PrivacyPolicy() {
               Depending on where you live, you may have rights over your personal data, including the right to access
               it, correct it, delete it, restrict or object to its processing, request a portable copy, and withdraw
               consent. Users in California additionally have the right to know what is collected and to opt out of
-              "sale" or "sharing" of personal information — note that we do not sell or share personal information as
+              "sale" or "sharing" of personal information. Note that we do not sell or share personal information as
               those terms are defined under the CCPA/CPRA.
             </P>
             <P>
@@ -399,8 +399,8 @@ export default function PrivacyPolicy() {
             <H2 id="changes">13. Changes to this policy</H2>
             <P>
               We may update this policy to reflect changes in the product, our providers, or the law. When we do, we
-              will revise the "Last updated" date at the top of this page. If we ever make a material change — for
-              example, if the application were to begin collecting data it does not collect today — we will announce it
+              will revise the "Last updated" date at the top of this page. If we ever make a material change, for
+              example, if the application were to begin collecting data it does not collect today, we will announce it
               clearly on this website and in the application before it takes effect, and where the law requires it, we
               will ask for your consent first.
             </P>
@@ -412,7 +412,7 @@ export default function PrivacyPolicy() {
             </P>
             <div className="rounded-2xl border border-border bg-card p-6 mb-6">
               <p className="text-[15px] leading-relaxed text-muted-foreground">
-                <strong className="text-foreground">Atharv Singh</strong> — Mavrik
+                <strong className="text-foreground">Atharv Singh</strong>, Mavrik
                 <br />
                 Email:{" "}
                 <a href={`mailto:${PRIVACY_EMAIL}`} className="font-semibold" style={{ color: "var(--mavrik-orange)" }}>

@@ -49,13 +49,13 @@ export default function DownloadPage() {
               style={{ background: "var(--mavrik-orange-muted)", color: "var(--mavrik-orange)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-              Version 0.1.0 — First public beta
+              Version 0.1.0 · First public beta
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
               Download <span className="gradient-text">Mavrik.</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Private, local AI that runs entirely on your own machine. Free to install — no account, no API key, and no
+              Private, local AI that runs entirely on your own machine. Free to install, with no account and no API key. No
               data ever leaves your device.
             </p>
           </div>

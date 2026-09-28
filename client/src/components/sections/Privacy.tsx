@@ -4,7 +4,7 @@ const PRIVACY_VISUAL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663461652296/g7YWXsfWaS2Ln8jTYigpr2/mavrik-privacy-visual-Cw8tSQSvv9qVKhrWwW9GWs.webp";
 
 const POINTS = [
-  "All AI processing happens on your CPU or GPU — no cloud inference",
+  "All AI processing happens on your CPU or GPU, never in the cloud",
   "Chat history stays in local storage on your device only",
   "No telemetry, no analytics, no phone-home requests",
   "The only network calls Mavrik makes are model downloads you start",

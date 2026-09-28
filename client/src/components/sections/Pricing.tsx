@@ -16,7 +16,7 @@ export default function Pricing() {
             Simple, <span className="gradient-text">transparent pricing.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Prices shown in USD. Every install starts with a free 21-day trial of the paid features — no card required.
+            Prices shown in USD. Every install starts with a free 21-day trial of the paid features. No card required.
           </p>
         </div>
 

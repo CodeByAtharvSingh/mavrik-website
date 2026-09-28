@@ -34,7 +34,7 @@ export default function DownloadCTA() {
           style={{ color: "var(--mavrik-orange-light)", background: "rgba(232, 93, 4, 0.1)" }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-          Available Now — Free, No Account Required
+          Available Now · Free · No Account Required
         </div>
 
         <h2 className="fade-up delay-100 text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
@@ -44,7 +44,7 @@ export default function DownloadCTA() {
         </h2>
 
         <p className="fade-up delay-200 text-lg text-white/60 max-w-xl mx-auto mb-12 leading-relaxed">
-          Mavrik is out now on Windows, free from the Microsoft Store — no subscription, no API key, no cloud. A native macOS build is on the way.
+          Mavrik is out now on Windows, free from the Microsoft Store. No subscription, no API key, no cloud. A native macOS build is on the way.
         </p>
 
         <div className="fade-up delay-300 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10">

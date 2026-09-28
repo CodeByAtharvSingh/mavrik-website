@@ -92,7 +92,7 @@ export default function Footer() {
             className="px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wide"
             style={{ background: "var(--mavrik-orange)", color: "white" }}
           >
-            Founder &amp; CEO — Atharv Singh
+            Atharv Singh, Founder &amp; CEO
           </span>
           <div className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
