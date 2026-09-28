@@ -215,20 +215,22 @@ export default function Hero() {
       <section className="relative overflow-hidden">
         {/* ── Sky background ─────────────────────────────────────────────── */}
         <div className="absolute inset-0">
-          {/* Warm-sky gradient fallback (shows if no photo is present) */}
+          {/* Blue-sky gradient fallback (shows if the photo can't load) */}
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, #FFC38A 0%, #FF8C42 32%, #E85D04 72%, #C44D00 100%)" }}
+            style={{ background: "linear-gradient(180deg, #1D74C4 0%, #3B9BDE 45%, #7FC3EE 100%)" }}
           />
-          {/* User-supplied cloud photo — save as client/public/sky.jpg */}
+          {/* Cloud photo, landscape — clouds band along the lower half so the
+              headline sits on clean blue. */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url(/sky.jpg)", filter: "saturate(0.6) contrast(1.03) brightness(1.02)" }}
+            style={{ backgroundImage: "url(/sky.webp)" }}
           />
-          {/* Warm orange tint so any sky reads as golden-hour + keeps text legible */}
+          {/* Deepens the blue and keeps white text legible over bright sky;
+              clears toward the bottom so the clouds stay crisp. */}
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, rgba(255,150,80,0.42) 0%, rgba(232,93,4,0.5) 55%, rgba(196,77,0,0.72) 100%)" }}
+            style={{ background: "linear-gradient(180deg, rgba(6,52,102,0.46) 0%, rgba(10,74,134,0.24) 42%, rgba(12,90,150,0.06) 72%, rgba(255,255,255,0) 100%)" }}
           />
           {/* Fade into the page background at the bottom */}
           <div
@@ -247,15 +249,15 @@ export default function Hero() {
 
             <h1
               className="fade-up delay-100 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white"
-              style={{ textShadow: "0 2px 24px rgba(120,45,0,0.35)" }}
+              style={{ textShadow: "0 2px 28px rgba(4,40,80,0.4)" }}
             >
-              Your AI. Your Machine.
+              All the AI.
               <br />
-              No Cloud.
+              None of the cloud.
             </h1>
 
             <p className="fade-up delay-200 text-lg text-white/90 leading-relaxed max-w-xl">
-              Mavrik runs powerful AI models entirely on your device. Private by design — no data leaves your machine, ever.
+              Mavrik runs 179 AI models entirely on your own hardware. Nothing you type ever leaves the machine.
             </p>
 
             <div className="fade-up delay-300 flex flex-wrap items-center justify-center gap-3 mt-2">
