@@ -1,18 +1,4 @@
-import {
-  ArrowRight,
-  ArrowUpRight,
-  BarChart3,
-  Brain,
-  Layers,
-  MessageSquare,
-  Mic,
-  Paperclip,
-  Search,
-  Send,
-  Download,
-  Star,
-  WifiOff,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Brain, Download, Star, WifiOff } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { DOWNLOAD_PATH, MODELS, STORE_URL } from "@/data/site";
 import { Link } from "wouter";
@@ -92,93 +78,24 @@ const ACHIEVEMENTS = [
 
 /* Faithful mock of the real Mavrik desktop app (sidebar, model pill, chat
    input) — matches the actual UI screenshot, with the chat area left clean. */
+/* The real Mavrik interface. Using the actual screenshot keeps the hero
+   honest as the app evolves, instead of a hand-built lookalike that drifts. */
 function AppWindowMock() {
   const model = useCyclingModel(800);
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <div className="rounded-2xl shadow-2xl border border-black/5 overflow-hidden text-left bg-[#F4F1EC]">
-        <div className="grid grid-cols-[170px_1fr] h-[340px] gap-2 p-2 max-sm:grid-cols-1">
-          {/* Sidebar */}
-          <div className="rounded-xl bg-[#F8F6F2] shadow-sm p-3 hidden sm:flex flex-col">
-            <div className="flex items-center gap-2 mb-3">
-              <img src="/logo.png" alt="" className="w-6 h-6 rounded-md" />
-              <span className="text-[13px] font-bold text-foreground">Mavrik</span>
-            </div>
-            <div
-              className="text-[8.5px] font-bold tracking-widest text-center rounded-full px-2 py-1 mb-3"
-              style={{ background: "var(--mavrik-orange-muted)", color: "var(--mavrik-orange)" }}
-            >
-              BETA · 6D 0H 48M LEFT
-            </div>
-            {[
-              { icon: MessageSquare, label: "Chat", active: true },
-              { icon: Layers, label: "Models" },
-              { icon: Search, label: "Ghost Index" },
-              { icon: BarChart3, label: "Auto Optimizer" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className={`flex items-center gap-2 rounded-lg px-2.5 py-1.5 mb-0.5 text-[11px] font-medium ${
-                  item.active ? "bg-white shadow-sm" : "text-foreground/60"
-                }`}
-                style={item.active ? { color: "var(--mavrik-orange)" } : undefined}
-              >
-                <item.icon className="w-3 h-3 flex-shrink-0" />
-                {item.label}
-              </div>
-            ))}
-            <div className="text-[8.5px] font-bold uppercase tracking-widest text-muted-foreground/50 mt-3 mb-1.5 px-1">Recent Chats</div>
-            <div className="rounded-lg bg-white shadow-sm px-2.5 py-1.5 text-[11px] font-medium" style={{ color: "var(--mavrik-orange)" }}>
-              New Chat
-            </div>
-            <div className="mt-auto rounded-lg bg-white shadow-sm p-2.5 space-y-2">
-              <div>
-                <div className="flex justify-between text-[9px] font-semibold text-foreground/70"><span>CPU</span><span>4%</span></div>
-                <div className="h-1 rounded-full bg-[#EFEBE4] mt-0.5"><div className="h-1 rounded-full w-[6%]" style={{ background: "var(--mavrik-orange)" }} /></div>
-              </div>
-              <div>
-                <div className="flex justify-between text-[9px] font-semibold text-foreground/70"><span>Memory</span><span>61%</span></div>
-                <div className="h-1 rounded-full bg-[#EFEBE4] mt-0.5"><div className="h-1 rounded-full w-[61%]" style={{ background: "var(--mavrik-orange)" }} /></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Main chat panel */}
-          <div className="rounded-xl bg-white shadow-sm flex flex-col p-4">
-            <div className="flex items-center justify-between">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F8F6F2] shadow-sm px-3 py-1.5 text-[11px] font-semibold text-foreground max-w-[190px]">
-                <span key={model.name} className="truncate animate-[modelSwap_260ms_ease-out]" title={model.name}>
-                  {model.name}
-                </span>
-                <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "var(--mavrik-orange)" }} />
-              </span>
-              <span className="rounded-full bg-[#F8F6F2] shadow-sm px-3 py-1.5 text-[11px] font-semibold text-foreground">New Chat</span>
-            </div>
-
-            {/* Clean empty chat area */}
-            <div className="flex-1 flex flex-col items-center justify-center gap-2">
-              <img src="/logo.png" alt="" className="w-9 h-9 rounded-xl opacity-90" />
-              <span className="text-[12px] text-muted-foreground">Your private, local AI. No cloud, no tracking.</span>
-            </div>
-
-            <div className="flex items-center gap-4 px-1 mb-1.5">
-              <span className="inline-flex items-center gap-1 text-[10px] text-muted-foreground"><Search className="w-2.5 h-2.5" /> Search</span>
-              <span className="inline-flex items-center gap-1 text-[10px] text-muted-foreground"><Mic className="w-2.5 h-2.5" /> Voice</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-xl bg-[#F8F6F2] shadow-inner px-3 py-2.5">
-              <Paperclip className="w-3.5 h-3.5 text-muted-foreground" />
-              <span className="text-[12px] text-muted-foreground flex-1">Message Mavrik...</span>
-              <span className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "var(--mavrik-orange)" }}>
-                <Send className="w-3.5 h-3.5 text-white" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <img
+        src="/app-screenshot.webp"
+        alt="The Mavrik desktop app: chat, model library, Ghost Index and Auto Optimizer, all running locally."
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        className="w-full rounded-2xl shadow-2xl border border-black/5"
+      />
 
       {/* Floating badges */}
-      <div className="hidden sm:flex absolute -top-5 -left-5 lg:-left-10 items-center gap-2.5 bg-white rounded-2xl shadow-xl px-4 py-3 border border-black/5 animate-[float_4s_ease-in-out_infinite_0.5s]">
+      <div className="hidden sm:flex absolute -top-6 -left-8 lg:-left-16 items-center gap-2.5 bg-white rounded-2xl shadow-xl px-4 py-3 border border-black/5 animate-[float_4s_ease-in-out_infinite_0.5s]">
         <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "var(--mavrik-orange-muted)" }}>
           <Brain className="w-4 h-4" style={{ color: "var(--mavrik-orange)" }} />
         </div>
@@ -196,7 +113,7 @@ function AppWindowMock() {
         </div>
       </div>
 
-      <div className="hidden sm:flex absolute -bottom-5 -right-5 lg:-right-10 items-center gap-2.5 bg-white rounded-2xl shadow-xl px-4 py-3 border border-black/5 animate-[float_5s_ease-in-out_infinite_1s]">
+      <div className="hidden sm:flex absolute -bottom-6 -right-8 lg:-right-16 items-center gap-2.5 bg-white rounded-2xl shadow-xl px-4 py-3 border border-black/5 animate-[float_5s_ease-in-out_infinite_1s]">
         <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-green-50">
           <WifiOff className="w-4 h-4 text-green-500" />
         </div>
