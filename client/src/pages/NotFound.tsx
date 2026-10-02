@@ -12,21 +12,33 @@ export default function NotFound() {
             className="w-16 h-16 rounded-2xl flex items-center justify-center"
             style={{ background: "var(--mavrik-orange-muted)" }}
           >
-            <AlertCircle className="w-8 h-8" style={{ color: "var(--mavrik-orange)" }} />
+            <AlertCircle
+              className="w-8 h-8"
+              style={{ color: "var(--mavrik-orange)" }}
+            />
           </div>
         </div>
 
-        <h1 className="text-5xl font-extrabold mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+        <h1
+          className="text-5xl font-extrabold mb-2"
+          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+        >
           404
         </h1>
-        <h2 className="text-lg font-bold text-foreground mb-3" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+        <h2
+          className="text-lg font-bold text-foreground mb-3"
+          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+        >
           Page not found
         </h2>
         <p className="text-muted-foreground mb-8 leading-relaxed">
           Sorry, the page you're looking for doesn't exist or has moved.
         </p>
 
-        <button onClick={() => setLocation("/")} className="btn-mavrik px-6 py-3 text-sm inline-flex items-center gap-2">
+        <button
+          onClick={() => setLocation("/")}
+          className="btn-mavrik px-6 py-3 text-sm inline-flex items-center gap-2"
+        >
           <ArrowLeft className="w-4 h-4" />
           Back to home
         </button>

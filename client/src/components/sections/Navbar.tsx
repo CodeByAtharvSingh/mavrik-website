@@ -24,14 +24,24 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-black/5" : "bg-transparent"
+        scrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-black/5"
+          : "bg-transparent"
       }`}
     >
       <div className="container flex items-center justify-between h-16">
         <a href="#" className="flex items-center gap-2.5 group">
-          <img src={LOGO_MARK} alt="Mavrik" className="w-8 h-8 object-contain" />
+          <img
+            src={LOGO_MARK}
+            alt="Mavrik"
+            className="w-8 h-8 object-contain"
+          />
           <span
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, letterSpacing: "0.04em" }}
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 800,
+              letterSpacing: "0.04em",
+            }}
             className={`text-lg transition-colors ${overSky ? "text-white" : "text-foreground"}`}
           >
             MAVRIK
@@ -39,7 +49,7 @@ export default function Navbar() {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.map(item => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -75,16 +85,22 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <div className="w-5 flex flex-col gap-1.5">
-            <span className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span
+              className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "rotate-45 translate-y-2" : ""}`}
+            />
+            <span
+              className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-0.5 transition-all duration-200 ${overSky ? "bg-white" : "bg-foreground"} ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            />
           </div>
         </button>
       </div>
 
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-border px-6 py-4 flex flex-col gap-4">
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.map(item => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

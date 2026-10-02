@@ -11,7 +11,6 @@ export const FEEDBACK_PATH = "/feedback";
 
 export type ModelTier = "Light" | "Balanced" | "Most capable" | "Vision";
 
-
 export interface ModelEntry {
   name: string;
   size: string;
@@ -285,10 +284,26 @@ export interface Step {
 }
 
 export const STEPS: Step[] = [
-  { num: "01", title: "Download Mavrik", desc: "Install free from the Microsoft Store on Windows 10/11. One click, no dependencies." },
-  { num: "02", title: "Auto Optimizer Scans Your Machine", desc: "Mavrik checks your CPU and RAM and scores every model for fit before you download one." },
-  { num: "03", title: "Download a Model, Once", desc: "Pick the model that fits your hardware. It lives on your disk. No subscriptions, no API keys." },
-  { num: "04", title: "Chat, Search, Analyze", desc: "Talk to your model, run Ghost Index on documents, and monitor your system, all in one app." },
+  {
+    num: "01",
+    title: "Download Mavrik",
+    desc: "Install free from the Microsoft Store on Windows 10/11. One click, no dependencies.",
+  },
+  {
+    num: "02",
+    title: "Auto Optimizer Scans Your Machine",
+    desc: "Mavrik checks your CPU and RAM and scores every model for fit before you download one.",
+  },
+  {
+    num: "03",
+    title: "Download a Model, Once",
+    desc: "Pick the model that fits your hardware. It lives on your disk. No subscriptions, no API keys.",
+  },
+  {
+    num: "04",
+    title: "Chat, Search, Analyze",
+    desc: "Talk to your model, run Ghost Index on documents, and monitor your system, all in one app.",
+  },
 ];
 
 export interface PricingTier {

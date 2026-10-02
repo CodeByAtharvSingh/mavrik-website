@@ -1,4 +1,11 @@
-import { ArrowRight, ArrowUpRight, Brain, Download, Star, WifiOff } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Brain,
+  Download,
+  Star,
+  WifiOff,
+} from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { DOWNLOAD_PATH, MODELS, STORE_URL } from "@/data/site";
 import { Link } from "wouter";
@@ -29,7 +36,10 @@ function useCyclingModel(intervalMs = 800) {
     };
     const start = () => {
       stop();
-      timer = window.setInterval(() => setI((n) => (n + 1) % order.length), intervalMs);
+      timer = window.setInterval(
+        () => setI(n => (n + 1) % order.length),
+        intervalMs
+      );
     };
     const onVisibility = () => (document.hidden ? stop() : start());
 
@@ -96,8 +106,14 @@ function AppWindowMock() {
 
       {/* Floating badges */}
       <div className="hidden sm:flex absolute -top-6 -left-8 lg:-left-16 items-center gap-2.5 bg-white rounded-2xl shadow-xl px-4 py-3 border border-black/5 animate-[float_4s_ease-in-out_infinite_0.5s]">
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "var(--mavrik-orange-muted)" }}>
-          <Brain className="w-4 h-4" style={{ color: "var(--mavrik-orange)" }} />
+        <div
+          className="w-8 h-8 rounded-lg flex items-center justify-center"
+          style={{ background: "var(--mavrik-orange-muted)" }}
+        >
+          <Brain
+            className="w-4 h-4"
+            style={{ color: "var(--mavrik-orange)" }}
+          />
         </div>
         <div>
           <div className="text-xs text-muted-foreground">Active Models</div>
@@ -119,7 +135,9 @@ function AppWindowMock() {
         </div>
         <div>
           <div className="text-xs text-muted-foreground">Network</div>
-          <div className="text-sm font-semibold text-green-600">Fully Offline</div>
+          <div className="text-sm font-semibold text-green-600">
+            Fully Offline
+          </div>
         </div>
       </div>
     </div>
@@ -135,7 +153,10 @@ export default function Hero() {
           {/* Blue-sky gradient fallback (shows if the photo can't load) */}
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, #1D74C4 0%, #3B9BDE 45%, #7FC3EE 100%)" }}
+            style={{
+              background:
+                "linear-gradient(180deg, #1D74C4 0%, #3B9BDE 45%, #7FC3EE 100%)",
+            }}
           />
           {/* Cloud photo, landscape — clouds band along the lower half so the
               headline sits on clean blue. */}
@@ -147,12 +168,18 @@ export default function Hero() {
               clears toward the bottom so the clouds stay crisp. */}
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, rgba(6,52,102,0.46) 0%, rgba(10,74,134,0.24) 42%, rgba(12,90,150,0.06) 72%, rgba(255,255,255,0) 100%)" }}
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(6,52,102,0.46) 0%, rgba(10,74,134,0.24) 42%, rgba(12,90,150,0.06) 72%, rgba(255,255,255,0) 100%)",
+            }}
           />
           {/* Fade into the page background at the bottom */}
           <div
             className="absolute inset-x-0 bottom-0 h-40"
-            style={{ background: "linear-gradient(to bottom, rgba(248,247,244,0) 0%, var(--background) 100%)" }}
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(248,247,244,0) 0%, var(--background) 100%)",
+            }}
           />
         </div>
 
@@ -174,7 +201,8 @@ export default function Hero() {
             </h1>
 
             <p className="fade-up delay-200 text-lg text-white/90 leading-relaxed max-w-xl">
-              Mavrik runs 179 AI models entirely on your own hardware. Nothing you type ever leaves the machine.
+              Mavrik runs 179 AI models entirely on your own hardware. Nothing
+              you type ever leaves the machine.
             </p>
 
             <div className="fade-up delay-300 flex flex-wrap items-center justify-center gap-3 mt-2">
@@ -232,15 +260,23 @@ export default function Hero() {
         <div className="container">
           <div className="grid sm:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {ACHIEVEMENTS.map((a, i) => (
-              <div key={a.title} className={`fade-up delay-${(i + 1) * 100} rounded-2xl border border-border bg-card p-6`}>
+              <div
+                key={a.title}
+                className={`fade-up delay-${(i + 1) * 100} rounded-2xl border border-border bg-card p-6`}
+              >
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
                   style={{ background: "var(--mavrik-orange-muted)" }}
                 >
-                  <a.icon className="w-4.5 h-4.5" style={{ color: "var(--mavrik-orange)" }} />
+                  <a.icon
+                    className="w-4.5 h-4.5"
+                    style={{ color: "var(--mavrik-orange)" }}
+                  />
                 </div>
                 <h3 className="text-sm font-bold mb-1.5">{a.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{a.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {a.desc}
+                </p>
                 {a.href.startsWith("/") ? (
                   <Link
                     href={a.href}
@@ -254,7 +290,11 @@ export default function Hero() {
                   <a
                     href={a.href}
                     target={a.href.startsWith("http") ? "_blank" : undefined}
-                    rel={a.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    rel={
+                      a.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                     className="inline-flex items-center gap-1 text-xs font-semibold"
                     style={{ color: "var(--mavrik-orange)" }}
                   >

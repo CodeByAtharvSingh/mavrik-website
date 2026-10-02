@@ -20,15 +20,25 @@ export default function Privacy() {
           <div className="fade-up relative order-2 lg:order-1">
             <div
               className="absolute -inset-8 rounded-3xl opacity-20 blur-2xl"
-              style={{ background: "radial-gradient(ellipse, var(--mavrik-orange) 0%, transparent 70%)" }}
+              style={{
+                background:
+                  "radial-gradient(ellipse, var(--mavrik-orange) 0%, transparent 70%)",
+              }}
             />
-            <img src={PRIVACY_VISUAL} alt="Mavrik Privacy" className="relative z-10 w-full rounded-2xl shadow-2xl" />
+            <img
+              src={PRIVACY_VISUAL}
+              alt="Mavrik Privacy"
+              className="relative z-10 w-full rounded-2xl shadow-2xl"
+            />
           </div>
 
           <div className="order-1 lg:order-2">
             <div
               className="fade-up text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: "var(--mavrik-orange)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              style={{
+                color: "var(--mavrik-orange)",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+              }}
             >
               Privacy First
             </div>
@@ -41,14 +51,21 @@ export default function Privacy() {
               <span className="gradient-text">don't compromise.</span>
             </h2>
             <p className="fade-up delay-200 text-lg text-muted-foreground mb-8 leading-relaxed">
-              In a world where every AI assistant sends your data to someone else's server, Mavrik is different. We built it from the ground up to run entirely on your machine.
+              In a world where every AI assistant sends your data to someone
+              else's server, Mavrik is different. We built it from the ground up
+              to run entirely on your machine.
             </p>
 
             <div className="fade-up delay-300 grid sm:grid-cols-2 gap-3">
-              {POINTS.map((point) => (
+              {POINTS.map(point => (
                 <div key={point} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "var(--mavrik-orange)" }} />
-                  <span className="text-sm text-muted-foreground leading-snug">{point}</span>
+                  <CheckCircle2
+                    className="w-4 h-4 mt-0.5 flex-shrink-0"
+                    style={{ color: "var(--mavrik-orange)" }}
+                  />
+                  <span className="text-sm text-muted-foreground leading-snug">
+                    {point}
+                  </span>
                 </div>
               ))}
             </div>

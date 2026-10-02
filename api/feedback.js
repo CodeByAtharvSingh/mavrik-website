@@ -28,8 +28,9 @@ export default async function handler(req, res) {
   const entry = {
     rating,
     review: review.slice(0, 2000),
-    improvement: typeof improvement === "string" ? improvement.slice(0, 2000) : "",
-    name: typeof name === "string" ? name.slice(0, 120) : "",         
+    improvement:
+      typeof improvement === "string" ? improvement.slice(0, 2000) : "",
+    name: typeof name === "string" ? name.slice(0, 120) : "",
     email: typeof email === "string" ? email.slice(0, 200) : "",
     at: new Date().toISOString(),
   };
@@ -46,6 +47,10 @@ export default async function handler(req, res) {
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error("[feedback] save failed", err);
-    res.status(500).json({ error: "Could not save your feedback. Please try again shortly." });
+    res
+      .status(500)
+      .json({
+        error: "Could not save your feedback. Please try again shortly.",
+      });
   }
 }

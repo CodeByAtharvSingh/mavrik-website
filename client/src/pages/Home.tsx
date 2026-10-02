@@ -16,8 +16,8 @@ function useScrollReveal() {
   useEffect(() => {
     const els = document.querySelectorAll(".fade-up");
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
+      entries => {
+        entries.forEach(e => {
           if (e.isIntersecting) {
             e.target.classList.add("visible");
             observer.unobserve(e.target);
@@ -26,7 +26,7 @@ function useScrollReveal() {
       },
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
-    els.forEach((el) => observer.observe(el));
+    els.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 }

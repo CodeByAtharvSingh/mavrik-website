@@ -10,17 +10,29 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <img src={LOGO_MARK} alt="Mavrik" className="w-7 h-7 object-contain" />
-              <span className="text-white font-extrabold tracking-widest text-base" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <img
+                src={LOGO_MARK}
+                alt="Mavrik"
+                className="w-7 h-7 object-contain"
+              />
+              <span
+                className="text-white font-extrabold tracking-widest text-base"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              >
                 MAVRIK
               </span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs mb-5">
-              Private AI for people who don't compromise. Your intelligence, your machine, your rules.
+              Private AI for people who don't compromise. Your intelligence,
+              your machine, your rules.
             </p>
             <div className="flex items-center gap-3">
               {[Github, Twitter, Globe].map((Icon, i) => (
-                <a key={i} href="#" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+                <a
+                  key={i}
+                  href="#"
+                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+                >
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
@@ -28,7 +40,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-sm font-bold mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <h4
+              className="text-white text-sm font-bold mb-4"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            >
               Product
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -37,16 +52,22 @@ export default function Footer() {
                 { label: "Models", href: "/#models" },
                 { label: "Pricing", href: "/#pricing" },
                 { label: "Download", href: "/download", internal: true },
-              ].map((item) =>
+              ].map(item =>
                 item.internal ? (
                   <li key={item.label}>
-                    <Link href={item.href} className="hover:text-white transition-colors">
+                    <Link
+                      href={item.href}
+                      className="hover:text-white transition-colors"
+                    >
                       {item.label}
                     </Link>
                   </li>
                 ) : (
                   <li key={item.label}>
-                    <a href={item.href} className="hover:text-white transition-colors">
+                    <a
+                      href={item.href}
+                      className="hover:text-white transition-colors"
+                    >
                       {item.label}
                     </a>
                   </li>
@@ -56,7 +77,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-sm font-bold mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <h4
+              className="text-white text-sm font-bold mb-4"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            >
               Company
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -65,16 +89,22 @@ export default function Footer() {
                 { label: "Feedback", href: "/feedback", internal: true },
                 { label: "Contact", href: "mailto:support@mavrik.in" },
                 { label: "Privacy Policy", href: "/privacy", internal: true },
-              ].map((item) =>
+              ].map(item =>
                 item.internal ? (
                   <li key={item.label}>
-                    <Link href={item.href} className="hover:text-white transition-colors">
+                    <Link
+                      href={item.href}
+                      className="hover:text-white transition-colors"
+                    >
                       {item.label}
                     </Link>
                   </li>
                 ) : (
                   <li key={item.label}>
-                    <a href={item.href} className="hover:text-white transition-colors">
+                    <a
+                      href={item.href}
+                      className="hover:text-white transition-colors"
+                    >
                       {item.label}
                     </a>
                   </li>
@@ -84,7 +114,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="section-divider mb-8" style={{ background: "rgba(255,255,255,0.06)", height: "1px" }} />
+        <div
+          className="section-divider mb-8"
+          style={{ background: "rgba(255,255,255,0.06)", height: "1px" }}
+        />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <span>© 2026 Mavrik. All rights reserved.</span>

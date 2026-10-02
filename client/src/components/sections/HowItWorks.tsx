@@ -7,11 +7,17 @@ export default function HowItWorks() {
         <div className="text-center max-w-2xl mx-auto mb-16 fade-up">
           <div
             className="text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ color: "var(--mavrik-orange)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            style={{
+              color: "var(--mavrik-orange)",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}
           >
             Getting Started
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <h2
+            className="text-4xl md:text-5xl font-extrabold leading-tight"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
             Up and running in <span className="gradient-text">4 steps</span>
           </h2>
         </div>
@@ -24,14 +30,23 @@ export default function HowItWorks() {
               <div className="bg-white rounded-2xl p-7 border border-border shadow-sm h-full">
                 <div
                   className="text-3xl font-extrabold mb-4 block"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: "var(--mavrik-orange)", opacity: 0.25 }}
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    color: "var(--mavrik-orange)",
+                    opacity: 0.25,
+                  }}
                 >
                   {step.num}
                 </div>
-                <h3 className="text-base font-bold mb-2.5" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <h3
+                  className="text-base font-bold mb-2.5"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                >
                   {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {step.desc}
+                </p>
               </div>
             </div>
           ))}
