@@ -63,7 +63,7 @@ export default function Footer() {
               {[
                 { label: "FAQ", href: "/#faq" },
                 { label: "Feedback", href: "/feedback", internal: true },
-                { label: "Contact", href: "mailto:support@mavrik.in" },
+                { label: "Contact", href: "mailto:mavrikai.studio@gmail.com" },
                 { label: "Privacy Policy", href: "/privacy", internal: true },
               ].map((item) =>
                 item.internal ? (

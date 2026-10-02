@@ -107,13 +107,13 @@ export default function Stats() {
                 <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">pages per PDF via Ghost Index</div>
               </div>
               <div>
-                <div className="stat-number text-5xl mb-1">0</div>
-                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">telemetry events, ever</div>
+                <div className="stat-number text-5xl mb-1">100%</div>
+                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">of your chats stay on your device</div>
               </div>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Mavrik is built by a small team that doesn't want your data. Every model runs on your CPU or GPU, every file stays on disk, and every response is generated without a single network call.
+              Mavrik is built by a small team that does not want your data. Every model runs on your own CPU or GPU, and your chats, files and memories never leave your device.
             </p>
           </div>
         </div>

@@ -1,15 +1,14 @@
 import { CheckCircle2 } from "lucide-react";
 
-const PRIVACY_VISUAL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663461652296/g7YWXsfWaS2Ln8jTYigpr2/mavrik-privacy-visual-Cw8tSQSvv9qVKhrWwW9GWs.webp";
+const PRIVACY_VISUAL = "/privacy-visual.webp";
 
 const POINTS = [
-  "All AI processing happens on your CPU or GPU, never in the cloud",
-  "Chat history stays in local storage on your device only",
-  "No telemetry, no analytics, no phone-home requests",
-  "The only network calls Mavrik makes are model downloads you start",
-  "Your files never leave your machine",
-  "Works fully air-gapped once your model is downloaded",
+  "Your chats, files and memories never leave your device",
+  "All AI processing happens on your own CPU or GPU",
+  "Sign in with Google once, then Mavrik works offline",
+  "We keep only your Google email, name and user ID, to sign you in",
+  "You can view and delete your memories inside the app",
+  "Network use is limited to signing in, model downloads you start, and a version check",
 ];
 
 export default function Privacy() {

@@ -17,8 +17,8 @@ function WindowsLogo({ className = "" }: { className?: string }) {
 const REQUIREMENTS = [
   { icon: Cpu, label: "Windows 10 or 11", sub: "64-bit (x64 or ARM64)" },
   { icon: HardDrive, label: "8 GB RAM minimum", sub: "16 GB+ for larger models" },
-  { icon: WifiOff, label: "Internet for setup only", sub: "Then fully offline" },
-  { icon: ShieldOff, label: "No account required", sub: "No sign-up, no telemetry" },
+  { icon: WifiOff, label: "Internet to sign in", sub: "Then Mavrik works offline" },
+  { icon: ShieldOff, label: "Sign in with Google", sub: "Once, then it works offline" },
 ];
 
 export default function DownloadPage() {
@@ -55,8 +55,8 @@ export default function DownloadPage() {
               Download <span className="gradient-text">Mavrik.</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Private, local AI that runs entirely on your own machine. Free to install, with no account and no API key. No
-              data ever leaves your device.
+              Private, local AI that runs on your own computer. Free to install and fully unlocked during launch. Your
+              chats, files and memories never leave your device. Sign in with Google once, then Mavrik works offline.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function DownloadPage() {
               </a>
 
               <p className="text-xs text-muted-foreground mt-5">
-                Opens the Microsoft Store · Free · Includes a 21-day trial of the paid features
+                Opens the Microsoft Store · Free and fully unlocked during launch
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export default function DownloadPage() {
 
             {/* Reassurance */}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm text-muted-foreground">
-              {["Free forever tier", "No account needed", "Zero telemetry", "Works fully offline"].map((item) => (
+              {["Free during launch", "Sign in with Google", "Your data stays on your device", "Works offline after sign in"].map((item) => (
                 <span key={item} className="flex items-center gap-1.5">
                   <Check className="w-4 h-4" style={{ color: "var(--mavrik-orange)" }} />
                   {item}

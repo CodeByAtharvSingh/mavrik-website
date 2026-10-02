@@ -34,7 +34,7 @@ export default function DownloadCTA() {
           style={{ color: "var(--mavrik-orange-light)", background: "rgba(232, 93, 4, 0.1)" }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-          Available Now · Free · No Account Required
+          Available Now · Free During Launch
         </div>
 
         <h2 className="fade-up delay-100 text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
@@ -44,7 +44,7 @@ export default function DownloadCTA() {
         </h2>
 
         <p className="fade-up delay-200 text-lg text-white/60 max-w-xl mx-auto mb-12 leading-relaxed">
-          Mavrik is out now on Windows, free from the Microsoft Store. No subscription, no API key, no cloud. A native macOS build is on the way.
+          Mavrik is out now on Windows, free from the Microsoft Store and fully unlocked during launch. Sign in with Google once, then it works offline. A native Mac build is on the way.
         </p>
 
         <div className="fade-up delay-300 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
@@ -81,13 +81,13 @@ export default function DownloadCTA() {
 
         <div className="fade-up delay-500 flex flex-wrap items-center justify-center gap-6 text-sm text-white/40">
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-green-400" /> Free forever tier
+            <CheckCircle2 className="w-4 h-4 text-green-400" /> Free during launch
           </span>
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-green-400" /> No account needed
+            <CheckCircle2 className="w-4 h-4 text-green-400" /> Sign in with Google
           </span>
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-green-400" /> Zero telemetry
+            <CheckCircle2 className="w-4 h-4 text-green-400" /> Your data stays on your device
           </span>
         </div>
       </div>

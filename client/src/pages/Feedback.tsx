@@ -37,7 +37,7 @@ export default function Feedback() {
               Help shape <span className="gradient-text">Mavrik.</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Mavrik hasn't launched yet. Rate it, tell us what you're excited about, and let us know where it can be better. Every response goes straight to the small team building it.
+              Mavrik is new and it gets better with every piece of feedback. Rate it, tell us what is working, and let us know where it can be better. Every response goes straight to the small team building it.
             </p>
           </div>
 

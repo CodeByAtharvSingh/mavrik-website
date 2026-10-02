@@ -4,24 +4,22 @@ import Footer from "@/components/sections/Footer";
 
 const LOGO_MARK = "/logo.png";
 
-const EFFECTIVE_DATE = "10 August 2026";
-const PRIVACY_EMAIL = "privacy@mavrik.in";
+const EFFECTIVE_DATE = "2 October 2026";
+const CONTACT_EMAIL = "mavrikai.studio@gmail.com";
 
 const SECTIONS = [
   { id: "who-we-are", label: "1. Who we are" },
-  { id: "summary", label: "2. Summary" },
-  { id: "app", label: "3. The Mavrik app" },
-  { id: "website", label: "4. The Mavrik website" },
-  { id: "never", label: "5. What we never do" },
-  { id: "third-parties", label: "6. Third-party services" },
-  { id: "cookies", label: "7. Cookies" },
-  { id: "retention", label: "8. Data retention" },
-  { id: "rights", label: "9. Your rights" },
-  { id: "children", label: "10. Children's privacy" },
-  { id: "security", label: "11. Security" },
-  { id: "transfers", label: "12. International transfers" },
-  { id: "changes", label: "13. Changes to this policy" },
-  { id: "contact", label: "14. Contact us" },
+  { id: "short-version", label: "2. The short version" },
+  { id: "on-your-device", label: "3. What stays on your device" },
+  { id: "what-we-collect", label: "4. What we collect" },
+  { id: "network", label: "5. What Mavrik sends over the network" },
+  { id: "offline", label: "6. Using Mavrik offline" },
+  { id: "third-parties", label: "7. Companies that help run Mavrik" },
+  { id: "website", label: "8. This website" },
+  { id: "controls", label: "9. Your controls" },
+  { id: "age", label: "10. Age" },
+  { id: "changes", label: "11. Changes to this policy" },
+  { id: "contact", label: "12. Contact us" },
 ];
 
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
@@ -49,6 +47,14 @@ function LI({ children }: { children: React.ReactNode }) {
   );
 }
 
+function Mail() {
+  return (
+    <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold" style={{ color: "var(--mavrik-orange)" }}>
+      {CONTACT_EMAIL}
+    </a>
+  );
+}
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -71,7 +77,6 @@ export default function PrivacyPolicy() {
       <main className="flex-1 py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            {/* Title */}
             <div
               className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
               style={{ background: "var(--mavrik-orange-muted)" }}
@@ -85,11 +90,10 @@ export default function PrivacyPolicy() {
               Effective date: {EFFECTIVE_DATE} · Last updated: {EFFECTIVE_DATE}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              This policy explains what data Mavrik does and does not collect, covering both the Mavrik desktop
-              application and the website at mavrik.in.
+              This policy explains, in plain English, what Mavrik does with your information. It covers the Mavrik app
+              and the website at mavrik.in.
             </p>
 
-            {/* Highlight box */}
             <div
               className="rounded-2xl border p-6 mt-10"
               style={{ background: "var(--mavrik-orange-muted)", borderColor: "rgba(232, 93, 4, 0.25)" }}
@@ -97,18 +101,16 @@ export default function PrivacyPolicy() {
               <div className="flex items-start gap-3">
                 <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--mavrik-orange)" }} />
                 <div>
-                  <p className="font-bold text-foreground mb-1">The short version</p>
+                  <p className="font-bold text-foreground mb-1">In one paragraph</p>
                   <p className="text-[15px] leading-relaxed text-foreground/80">
-                    The Mavrik desktop app collects <strong>no personal data whatsoever</strong>. It has no accounts, no
-                    telemetry, and no analytics. Your conversations, files, and documents are processed entirely on your
-                    own device and never transmitted to us or anyone else. The website collects limited data described
-                    below, and is separate from the app.
+                    Mavrik runs AI models on your own computer. Your chats, files and memories never leave your device.
+                    Mavrik does not upload them. To use Mavrik you sign in with Google once, and we keep your Google
+                    email, name and user ID so we can sign you in. After that first sign in, Mavrik works offline.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Table of contents */}
             <nav className="rounded-2xl border border-border bg-card p-6 mt-8">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Contents</p>
               <ol className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
@@ -125,312 +127,176 @@ export default function PrivacyPolicy() {
               </ol>
             </nav>
 
-            {/* ── Body ── */}
             <H2 id="who-we-are">1. Who we are</H2>
             <P>
-              Mavrik is an independent software project developed and published by <strong>Atharv Singh</strong>, an
-              individual developer based in India. For the purposes of applicable data protection law, including
-              India's Digital Personal Data Protection Act, 2023 (DPDP Act), the EU/UK General Data Protection
-              Regulation (GDPR), and the California Consumer Privacy Act (CCPA/CPRA), Atharv Singh is the data
-              controller (or equivalent) for any personal data described in this policy.
+              Mavrik is built by Atharv Singh. Mavrik is a private AI assistant that runs AI models on your own
+              computer. It is available now on Windows, and a Mac version is coming soon.
             </P>
             <P>
-              In this policy, "Mavrik", "we", "us" and "our" refer to Atharv Singh operating as Mavrik. "You" refers to
-              anyone who uses the Mavrik application or visits the Mavrik website.
-            </P>
-            <P>
-              You can reach us at any time at{" "}
-              <a href={`mailto:${PRIVACY_EMAIL}`} className="font-semibold" style={{ color: "var(--mavrik-orange)" }}>
-                {PRIVACY_EMAIL}
-              </a>
-              .
+              In this policy, "Mavrik", "we" and "us" mean Atharv Singh operating as Mavrik. "You" means anyone who
+              uses the Mavrik app or visits this website. You can reach us any time at <Mail />.
             </P>
 
-            <H2 id="summary">2. Summary</H2>
+            <H2 id="short-version">2. The short version</H2>
+            <UL>
+              <LI>Your chats, files and memories never leave your device.</LI>
+              <LI>Sign in with Google once. After that, Mavrik works offline.</LI>
+              <LI>We keep your Google email, name and user ID, and we use them only to sign you in.</LI>
+              <LI>You can view and delete your memories inside the app.</LI>
+              <LI>Everything in Mavrik is free and fully unlocked during launch.</LI>
+            </UL>
+
+            <H2 id="on-your-device">3. What stays on your device</H2>
             <P>
-              Mavrik is a private, local-first AI application. Its entire purpose is to let you run AI models on your own
-              computer so that your data never leaves it. This policy reflects that design honestly, and separates two
-              distinct things:
+              Mavrik runs AI models on your own computer, so the things you do in the app are handled there. The
+              following stay on your device, and Mavrik does not upload them:
             </P>
             <UL>
+              <LI>Your chats and the prompts you type</LI>
+              <LI>Files, documents and images you open or analyse, including anything you use with Ghost Index</LI>
+              <LI>The memories Mavrik saves about you</LI>
+              <LI>The AI models you download, and all the AI processing done with them</LI>
+              <LI>Your settings, and the system readings shown by Auto Optimizer</LI>
+            </UL>
+            <P>
+              Because the AI runs on your computer rather than on our servers, we cannot read your chats, your files or
+              your memories.
+            </P>
+
+            <H2 id="what-we-collect">4. What we collect</H2>
+            <P>
+              To use Mavrik you sign in with Google. When you do, we keep the following account information, and we use
+              it only to sign you in and keep you signed in:
+            </P>
+            <UL>
+              <LI>Your Google email address</LI>
+              <LI>Your name as it appears on your Google account</LI>
+              <LI>Your Google user ID</LI>
+            </UL>
+            <P>
+              That is the whole list. We do not collect your chats, your files, your images or your memories, because
+              those never leave your device.
+            </P>
+
+            <H2 id="network">5. What Mavrik sends over the network</H2>
+            <P>Mavrik makes three kinds of network request, and nothing in them includes your chats or files:</P>
+            <UL>
               <LI>
-                <strong>The Mavrik desktop application</strong> collects no personal data at all. See Section 3.
+                <strong>Signing in.</strong> Signing in is handled by Google and Firebase. This happens when you first
+                sign in, and when your sign in needs to be refreshed.
               </LI>
               <LI>
-                <strong>The Mavrik website (mavrik.in)</strong> is a normal marketing website that uses advertising and
-                optional forms, and therefore does collect some limited data. See Section 4.
+                <strong>Model downloads you start.</strong> When you choose to download an AI model, Mavrik downloads
+                that model file. This only happens when you ask for it.
+              </LI>
+              <LI>
+                <strong>A version check.</strong> Mavrik checks whether a newer version is available. This check sends
+                no personal data.
               </LI>
             </UL>
 
-            <H2 id="app">3. The Mavrik app</H2>
+            <H2 id="offline">6. Using Mavrik offline</H2>
             <P>
-              <strong>We collect no personal data through the Mavrik desktop application.</strong> There are no user
-              accounts, no sign-in, no telemetry, no analytics SDKs, no crash reporting, no advertising identifiers, and
-              no usage tracking of any kind.
+              After you sign in with Google the first time, Mavrik works offline. You can keep using the app, your
+              downloaded models and your saved chats without an internet connection.
             </P>
 
-            <p className="font-bold text-foreground mt-8 mb-3">3.1 Data processed only on your device</p>
-            <P>
-              The following stays on your computer, in local application storage, and is never transmitted to us or to
-              any third party:
-            </P>
+            <H2 id="third-parties">7. Companies that help run Mavrik</H2>
+            <P>We keep this list short. These companies each have their own privacy policies.</P>
             <UL>
-              <LI>Your prompts, conversations and chat history</LI>
-              <LI>Any files, documents, PDFs or images you open or analyse (including Ghost Index document indexes, and images read by on-device vision models)</LI>
-              <LI>The AI models you download, and all AI inference performed with them</LI>
-              <LI>Your application settings and preferences</LI>
-              <LI>System performance readings shown by Auto Optimizer (CPU and memory usage)</LI>
+              <LI>
+                <strong>Google and Firebase</strong> handle signing in. Your Google account details are processed by
+                Google under Google's own privacy policy.
+              </LI>
+              <LI>
+                <strong>Microsoft</strong> distributes Mavrik through the Microsoft Store, and Apple will do the same
+                on Mac. When you install from a store, that company handles the install under its own privacy policy,
+                and we do not receive your personal details from them.
+              </LI>
             </UL>
-            <P>
-              All AI processing is performed locally by your own CPU or GPU. Because there is no server-side inference,
-              we are technically incapable of reading your conversations or documents. Deleting the application, or
-              clearing its local data, removes this information permanently.
-            </P>
 
-            <p className="font-bold text-foreground mt-8 mb-3">3.2 Network connections the app makes</p>
+            <H2 id="website">8. This website</H2>
             <P>
-              Mavrik is designed to work offline, but it does make a small number of outbound connections. These are the
-              only ones, and none of them transmit your personal content:
+              The website at mavrik.in is separate from the app. It uses the following, and nothing else:
             </P>
             <UL>
               <LI>
-                <strong>AI model downloads.</strong> When you choose to download a model, the app downloads it directly
-                from Hugging Face (huggingface.co). Like any download, this reveals your IP address and the file
-                requested to that provider. No account or identifier of yours is attached. This happens only when you
-                explicitly start a download.
+                <strong>Vercel</strong> hosts the website. Like any web host, Vercel records standard request logs,
+                which include visitor IP addresses, for security and reliability.
               </LI>
               <LI>
-                <strong>Update checks.</strong> The app may request a small version file from mavrik.in to tell you
-                whether a newer version is available. This request necessarily reveals your IP address to our hosting
-                provider, and contains no identifier, no device fingerprint, and no information about your usage.
+                <strong>Vercel Web Analytics</strong> measures page views and visitor counts for this website, not for
+                the app. According to Vercel, it does not use cookies and does not track visitors across other
+                websites.
+              </LI>
+              <LI>
+                <strong>Vercel KV</strong> stores feedback you choose to submit through the feedback form, including
+                the rating and written responses, plus your name and email if you add them. Both of those fields are
+                optional.
+              </LI>
+              <LI>
+                <strong>Google Fonts</strong> serves the typeface used on this website. Loading a font from Google
+                means Google receives your IP address as part of that request.
               </LI>
             </UL>
-            <P>
-              Once a model is downloaded, Mavrik can be used entirely offline, including fully air-gapped. No feature of
-              the app requires an internet connection to function.
-            </P>
+            <P>There is no advertising on this website and no advertising cookies.</P>
 
-            <H2 id="website">4. The Mavrik website</H2>
-            <P>
-              The website at mavrik.in is a conventional marketing website and is technically separate from the
-              application. Unlike the app, it does collect limited data, as follows.
-            </P>
-
-            <p className="font-bold text-foreground mt-8 mb-3">4.1 Server logs</p>
-            <P>
-              Our hosting provider, Vercel, automatically records standard technical request logs when you visit the
-              site, including your IP address, browser type and user agent, the pages requested, and timestamps. This is
-              standard practice for web hosting and is used for security, abuse prevention, and reliability. We do not
-              use these logs to build profiles of individuals.
-            </P>
-
-            <p className="font-bold text-foreground mt-8 mb-3">4.2 Advertising (Google AdSense)</p>
-            <P>
-              The website displays advertising served by Google AdSense. Google and its partners may use cookies,
-              device identifiers and similar technologies to serve and measure ads, and in some regions to personalise
-              them based on your prior visits to this and other websites. This data is collected and controlled by
-              Google, not by us.
-            </P>
-            <P>
-              You can review and control how Google uses this data at{" "}
-              <a
-                href="https://myadcenter.google.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline"
-                style={{ color: "var(--mavrik-orange)" }}
-              >
-                Google My Ad Center
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://policies.google.com/technologies/partner-sites"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline"
-                style={{ color: "var(--mavrik-orange)" }}
-              >
-                Google's partner-site policy
-              </a>
-              . Advertising is present only on the website. The desktop application contains no advertising and no ad
-              tracking of any kind.
-            </P>
-
-            <p className="font-bold text-foreground mt-8 mb-3">4.3 Waitlist form</p>
-            <P>
-              If you choose to join the waitlist, the form is hosted by Tally and collects the information you enter,
-              which may include your name, email address, city, country and age. We use this solely to notify you when
-              Mavrik becomes available and to understand where early interest is coming from. We do not sell it, and we
-              do not use it for unrelated marketing. Submitting the form is entirely optional.
-            </P>
-
-            <p className="font-bold text-foreground mt-8 mb-3">4.4 Feedback form</p>
-            <P>
-              If you submit feedback, we store the star rating and the written responses you provide, plus your name and
-              email address if you choose to supply them (both are optional). This is stored in our hosting provider's
-              database and used only to improve Mavrik and, where you have given an email address, to reply to you.
-            </P>
-
-            <H2 id="never">5. What we never do</H2>
-            <P>Across both the application and the website, we do not and will not:</P>
+            <H2 id="controls">9. Your controls</H2>
             <div className="space-y-2.5 mb-5">
               {[
-                "Sell, rent or trade your personal data to anyone",
-                "Read, upload, or store your conversations, prompts, documents, or images",
-                "Use your files or chats to train AI models",
-                "Include telemetry, analytics or crash reporting in the desktop application",
-                "Require an account, sign-in, or personal information to use the app",
-                "Share your information with third parties except the service providers listed in Section 6",
+                "Log out of Mavrik at any time from inside the app.",
+                "View and delete your memories inside the app whenever you want.",
+                "Delete your chats and files directly on your own computer, since that is where they live.",
+                `To delete your account, email ${CONTACT_EMAIL}.`,
               ].map((item) => (
                 <div key={item} className="flex gap-2.5 text-[15px] leading-relaxed text-muted-foreground">
-                  <X className="w-4 h-4 mt-1 flex-shrink-0 text-red-500" />
+                  <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "var(--mavrik-orange)" }} />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-
-            <H2 id="third-parties">6. Third-party services</H2>
             <P>
-              We keep third-party involvement to a minimum. The following providers may process limited data on our
-              behalf or in their own right, and each maintains its own privacy policy:
-            </P>
-            <UL>
-              <LI>
-                <strong>Vercel</strong> handles website hosting, server logs, and feedback storage.
-              </LI>
-              <LI>
-                <strong>Google AdSense</strong> serves advertising on the website only.
-              </LI>
-              <LI>
-                <strong>Tally</strong> processes the waitlist form, if you choose to submit it.
-              </LI>
-              <LI>
-                <strong>Hugging Face</strong> hosts the AI model files you choose to download in the app.
-              </LI>
-            </UL>
-            <P>
-              If you install Mavrik through the Microsoft Store, Microsoft may separately collect installation and
-              diagnostic information under its own privacy policy. We do not receive your personal data from Microsoft.
+              If you have a question about your information, or you want to know what we hold, email <Mail /> and we
+              will help.
             </P>
 
-            <H2 id="cookies">7. Cookies</H2>
+            <H2 id="age">10. Age</H2>
+            <P>Mavrik is for people aged 18 and over.</P>
+
+            <H2 id="changes">11. Changes to this policy</H2>
             <P>
-              The <strong>desktop application does not use cookies.</strong>
-            </P>
-            <P>
-              The website uses cookies and similar technologies set by Google AdSense for advertising and measurement
-              purposes, as described in Section 4.2. We do not set our own tracking or profiling cookies. You can block
-              or delete cookies in your browser settings at any time; doing so will not affect your ability to use the
-              Mavrik application.
+              If we change this policy, we will update the date at the top of this page. If the change is important,
+              for example if Mavrik starts collecting something it does not collect today, we will say so clearly on
+              this website and in the app before the change takes effect.
             </P>
 
-            <H2 id="retention">8. Data retention</H2>
-            <UL>
-              <LI>
-                <strong>App data</strong> is stored only on your own device, for as long as you keep it. We hold no copy
-                and therefore cannot retain, restore or delete it on your behalf.
-              </LI>
-              <LI>
-                <strong>Waitlist entries</strong> are kept until Mavrik launches and the launch notification has been
-                sent, or until you ask us to delete them, whichever comes first.
-              </LI>
-              <LI>
-                <strong>Feedback submissions</strong> are kept for as long as needed to act on the feedback and improve
-                the product, or until you ask us to delete them.
-              </LI>
-              <LI>
-                <strong>Server logs</strong> are retained on a short rolling basis by our hosting provider for security
-                and operational purposes.
-              </LI>
-            </UL>
-
-            <H2 id="rights">9. Your rights</H2>
-            <P>
-              Depending on where you live, you may have rights over your personal data, including the right to access
-              it, correct it, delete it, restrict or object to its processing, request a portable copy, and withdraw
-              consent. Users in California additionally have the right to know what is collected and to opt out of
-              "sale" or "sharing" of personal information. Note that we do not sell or share personal information as
-              those terms are defined under the CCPA/CPRA.
-            </P>
-            <P>
-              To exercise any of these rights, email{" "}
-              <a href={`mailto:${PRIVACY_EMAIL}`} className="font-semibold" style={{ color: "var(--mavrik-orange)" }}>
-                {PRIVACY_EMAIL}
-              </a>
-              . We will respond within 30 days. Because the desktop application collects nothing, such requests can only
-              ever relate to the limited website data described in Section 4. You also have the right to lodge a
-              complaint with your local data protection authority.
-            </P>
-
-            <H2 id="children">10. Children's privacy</H2>
-            <P>
-              Mavrik is not directed at children under the age of 13 (or the equivalent minimum age in your
-              jurisdiction), and we do not knowingly collect personal data from them. The desktop application collects
-              no personal data from any user regardless of age. If you believe a child has provided personal data
-              through our website forms, contact us at{" "}
-              <a href={`mailto:${PRIVACY_EMAIL}`} className="font-semibold" style={{ color: "var(--mavrik-orange)" }}>
-                {PRIVACY_EMAIL}
-              </a>{" "}
-              and we will delete it promptly.
-            </P>
-
-            <H2 id="security">11. Security</H2>
-            <P>
-              Mavrik's local-first architecture is itself the strongest security measure we can offer: data that is
-              never transmitted cannot be intercepted in transit or exposed in a server breach. Your conversations and
-              documents remain under your own operating system's file permissions and any disk encryption you have
-              enabled.
-            </P>
-            <P>
-              For the limited website data we do hold, we rely on reputable providers that use encryption in transit
-              (HTTPS/TLS) and access controls. No method of transmission or storage is completely secure, and we cannot
-              guarantee absolute security, but we work to protect the small amount of data involved.
-            </P>
-
-            <H2 id="transfers">12. International transfers</H2>
-            <P>
-              We operate from India, and the third-party providers listed in Section 6 may process data on servers
-              located in other countries, including the United States and the European Union. Where data is transferred
-              internationally, those providers rely on recognised safeguards such as the EU Standard Contractual
-              Clauses. Data handled solely within the Mavrik application never leaves your device and is never
-              transferred anywhere.
-            </P>
-
-            <H2 id="changes">13. Changes to this policy</H2>
-            <P>
-              We may update this policy to reflect changes in the product, our providers, or the law. When we do, we
-              will revise the "Last updated" date at the top of this page. If we ever make a material change, for
-              example, if the application were to begin collecting data it does not collect today, we will announce it
-              clearly on this website and in the application before it takes effect, and where the law requires it, we
-              will ask for your consent first.
-            </P>
-
-            <H2 id="contact">14. Contact us</H2>
-            <P>
-              For any question, concern, or request relating to privacy or this policy, contact us and we will respond
-              within 30 days:
-            </P>
+            <H2 id="contact">12. Contact us</H2>
+            <P>For anything to do with privacy, your account or this policy, email us and we will reply:</P>
             <div className="rounded-2xl border border-border bg-card p-6 mb-6">
               <p className="text-[15px] leading-relaxed text-muted-foreground">
                 <strong className="text-foreground">Atharv Singh</strong>, Mavrik
                 <br />
-                Email:{" "}
-                <a href={`mailto:${PRIVACY_EMAIL}`} className="font-semibold" style={{ color: "var(--mavrik-orange)" }}>
-                  {PRIVACY_EMAIL}
-                </a>
+                Email: <Mail />
                 <br />
                 Website:{" "}
                 <a href="https://mavrik.in" className="font-semibold" style={{ color: "var(--mavrik-orange)" }}>
                   mavrik.in
                 </a>
-                <br />
-                Location: India
               </p>
             </div>
-            <P>
-              This policy is governed by the laws of India, including the Digital Personal Data Protection Act, 2023,
-              without prejudice to any rights you hold under the data protection laws of your own country.
-            </P>
+
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <div className="flex items-start gap-3">
+                <X className="w-5 h-5 mt-0.5 flex-shrink-0 text-red-500" />
+                <div>
+                  <p className="font-bold text-foreground mb-1">What we do not do</p>
+                  <p className="text-[15px] leading-relaxed text-muted-foreground">
+                    We do not sell your personal information. We do not upload your chats, files or memories, and we do
+                    not use them to train AI models.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>

@@ -1,11 +1,13 @@
 import { AlertCircle, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
+import Footer from "@/components/sections/Footer";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-background px-4">
+    <div className="min-h-screen flex flex-col bg-background">
+      <div className="flex-1 w-full flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-md text-center">
         <div className="flex justify-center mb-6">
           <div
@@ -30,7 +32,9 @@ export default function NotFound() {
           <ArrowLeft className="w-4 h-4" />
           Back to home
         </button>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

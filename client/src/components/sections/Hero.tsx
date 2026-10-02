@@ -55,8 +55,8 @@ function modelNameSize(name: string) {
 const ACHIEVEMENTS = [
   {
     icon: WifiOff,
-    title: "Zero Cloud Calls",
-    desc: "Every response is generated on your machine. Open the network tab. There's nothing to see.",
+    title: "Your Data Stays Put",
+    desc: "Your chats, files and memories never leave your device. Mavrik does not upload them.",
     href: "#privacy",
     linkLabel: "See how it works",
   },
@@ -70,7 +70,7 @@ const ACHIEVEMENTS = [
   {
     icon: Download,
     title: "Free on the Microsoft Store",
-    desc: "Install on Windows 10 or 11 in one click. No account, and a 21-day trial of the paid features.",
+    desc: "Install on Windows 10 or 11 in one click. Sign in with Google once, then Mavrik works offline.",
     href: DOWNLOAD_PATH,
     linkLabel: "Get Mavrik",
   },
