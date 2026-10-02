@@ -8,7 +8,9 @@ export default function FeedbackForm() {
   const [hoverRating, setHoverRating] = useState(0);
   const [review, setReview] = useState("");
   const [improvement, setImprovement] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [error, setError] = useState("");
 
   const RATING_LABELS = ["", "Poor", "Fair", "Good", "Great", "Excellent"];
@@ -47,18 +49,24 @@ export default function FeedbackForm() {
         <CheckCircle2 className="w-12 h-12 mx-auto mb-4 text-green-500" />
         <h3 className="text-2xl font-bold mb-2">Thank you.</h3>
         <p className="text-muted-foreground">
-          Your feedback goes straight to the team building Mavrik. It genuinely shapes what we ship next.
+          Your feedback goes straight to the team building Mavrik. It genuinely
+          shapes what we ship next.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-6 shadow-sm">
+    <form
+      onSubmit={handleSubmit}
+      className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-6 shadow-sm"
+    >
       <div>
-        <label className="text-sm font-bold mb-3 block">How would you rate Mavrik so far?</label>
+        <label className="text-sm font-bold mb-3 block">
+          How would you rate Mavrik so far?
+        </label>
         <div className="flex items-center gap-2">
-          {[1, 2, 3, 4, 5].map((n) => (
+          {[1, 2, 3, 4, 5].map(n => (
             <button
               key={n}
               type="button"
@@ -70,13 +78,22 @@ export default function FeedbackForm() {
             >
               <Star
                 className="w-9 h-9 transition-colors"
-                fill={n <= (hoverRating || rating) ? "var(--mavrik-orange)" : "none"}
-                color={n <= (hoverRating || rating) ? "var(--mavrik-orange)" : "#D6D0C6"}
+                fill={
+                  n <= (hoverRating || rating) ? "var(--mavrik-orange)" : "none"
+                }
+                color={
+                  n <= (hoverRating || rating)
+                    ? "var(--mavrik-orange)"
+                    : "#D6D0C6"
+                }
               />
             </button>
           ))}
           {(hoverRating || rating) > 0 && (
-            <span className="ml-2 text-sm font-semibold" style={{ color: "var(--mavrik-orange)" }}>
+            <span
+              className="ml-2 text-sm font-semibold"
+              style={{ color: "var(--mavrik-orange)" }}
+            >
               {RATING_LABELS[hoverRating || rating]}
             </span>
           )}
@@ -88,7 +105,7 @@ export default function FeedbackForm() {
         <textarea
           required
           value={review}
-          onChange={(e) => setReview(e.target.value)}
+          onChange={e => setReview(e.target.value)}
           rows={4}
           placeholder="What do you like about Mavrik? What made you interested in running AI locally?"
           className="w-full px-4 py-3 rounded-xl border border-border text-sm outline-none focus:border-[var(--mavrik-orange)] transition-colors resize-none"
@@ -96,10 +113,12 @@ export default function FeedbackForm() {
       </div>
 
       <div>
-        <label className="text-sm font-bold mb-2 block">Where can Mavrik improve?</label>
+        <label className="text-sm font-bold mb-2 block">
+          Where can Mavrik improve?
+        </label>
         <textarea
           value={improvement}
-          onChange={(e) => setImprovement(e.target.value)}
+          onChange={e => setImprovement(e.target.value)}
           rows={3}
           placeholder="Missing a model, a feature, a platform? Tell us what would make Mavrik a must-have for you."
           className="w-full px-4 py-3 rounded-xl border border-border text-sm outline-none focus:border-[var(--mavrik-orange)] transition-colors resize-none"
@@ -108,21 +127,25 @@ export default function FeedbackForm() {
 
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label className="text-xs font-semibold text-muted-foreground mb-1.5 block">Name (optional)</label>
+          <label className="text-xs font-semibold text-muted-foreground mb-1.5 block">
+            Name (optional)
+          </label>
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={e => setName(e.target.value)}
             placeholder="Your name"
             className="w-full px-4 py-2.5 rounded-xl border border-border text-sm outline-none focus:border-[var(--mavrik-orange)] transition-colors"
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-muted-foreground mb-1.5 block">Email (optional)</label>
+          <label className="text-xs font-semibold text-muted-foreground mb-1.5 block">
+            Email (optional)
+          </label>
           <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             placeholder="you@email.com"
             className="w-full px-4 py-2.5 rounded-xl border border-border text-sm outline-none focus:border-[var(--mavrik-orange)] transition-colors"
           />

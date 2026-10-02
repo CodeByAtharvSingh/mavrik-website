@@ -11,29 +11,46 @@ export default function EarlyAccess() {
             className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6"
             style={{ background: "var(--mavrik-orange-muted)" }}
           >
-            <MessageSquareHeart className="w-6 h-6" style={{ color: "var(--mavrik-orange)" }} />
+            <MessageSquareHeart
+              className="w-6 h-6"
+              style={{ color: "var(--mavrik-orange)" }}
+            />
           </div>
 
-          <div className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--mavrik-orange)" }}>
+          <div
+            className="text-xs font-semibold tracking-widest uppercase mb-4"
+            style={{ color: "var(--mavrik-orange)" }}
+          >
             Early Access
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
             Help shape <span className="gradient-text">Mavrik.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Mavrik is new, and it gets better with every piece of feedback. Tell us how it runs on your machine, which models you reach for, and what's missing.
+            Mavrik is new, and it gets better with every piece of feedback. Tell
+            us how it runs on your machine, which models you reach for, and
+            what's missing.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-            Rate Mavrik, share what's working, and tell us where it can improve. Every response goes directly to the small team building it.
+            Rate Mavrik, share what's working, and tell us where it can improve.
+            Every response goes directly to the small team building it.
           </p>
 
           <div className="flex items-center justify-center gap-1 mb-6">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5" fill="var(--mavrik-orange)" color="var(--mavrik-orange)" />
+              <Star
+                key={i}
+                className="w-5 h-5"
+                fill="var(--mavrik-orange)"
+                color="var(--mavrik-orange)"
+              />
             ))}
           </div>
 
-          <Link href={FEEDBACK_PATH} className="btn-mavrik px-7 py-3.5 text-base inline-flex items-center gap-2.5">
+          <Link
+            href={FEEDBACK_PATH}
+            className="btn-mavrik px-7 py-3.5 text-base inline-flex items-center gap-2.5"
+          >
             Share Your Feedback
             <ArrowRight className="w-4 h-4" />
           </Link>

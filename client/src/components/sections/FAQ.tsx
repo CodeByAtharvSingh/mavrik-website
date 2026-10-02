@@ -1,4 +1,9 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { FAQS } from "@/data/site";
 
 export default function FAQ() {
@@ -8,11 +13,17 @@ export default function FAQ() {
         <div className="text-center max-w-2xl mx-auto mb-16 fade-up">
           <div
             className="text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ color: "var(--mavrik-orange)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            style={{
+              color: "var(--mavrik-orange)",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}
           >
             FAQ
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <h2
+            className="text-4xl md:text-5xl font-extrabold leading-tight"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
             Frequently asked <span className="gradient-text">questions.</span>
           </h2>
         </div>
@@ -27,7 +38,9 @@ export default function FAQ() {
                 >
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed text-[15px]">{item.a}</AccordionContent>
+                <AccordionContent className="text-muted-foreground leading-relaxed text-[15px]">
+                  {item.a}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

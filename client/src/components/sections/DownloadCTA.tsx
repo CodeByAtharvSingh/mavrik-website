@@ -3,21 +3,37 @@ import { STORE_URL } from "@/data/site";
 
 const PLATFORMS = [
   { name: "Windows", icon: AppWindow, sub: "Windows 10 & 11", available: true },
-  { name: "macOS", icon: Apple, sub: "Apple Silicon & Intel", available: false },
+  {
+    name: "macOS",
+    icon: Apple,
+    sub: "Apple Silicon & Intel",
+    available: false,
+  },
 ];
 
 export default function DownloadCTA() {
   return (
     <section id="download" className="py-28 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #1A1A1A 0%, #2D1A0A 100%)" }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, #1A1A1A 0%, #2D1A0A 100%)",
+          }}
+        />
         <div
           className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl"
-          style={{ background: "radial-gradient(circle, var(--mavrik-orange) 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, var(--mavrik-orange) 0%, transparent 70%)",
+          }}
         />
         <div
           className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl"
-          style={{ background: "radial-gradient(circle, var(--mavrik-orange-light) 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, var(--mavrik-orange-light) 0%, transparent 70%)",
+          }}
         />
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -31,7 +47,10 @@ export default function DownloadCTA() {
       <div className="container relative z-10 text-center">
         <div
           className="fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/30 text-xs font-semibold tracking-wide mb-8"
-          style={{ color: "var(--mavrik-orange-light)", background: "rgba(232, 93, 4, 0.1)" }}
+          style={{
+            color: "var(--mavrik-orange-light)",
+            background: "rgba(232, 93, 4, 0.1)",
+          }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
           Available Now · Free · No Account Required
@@ -44,21 +63,34 @@ export default function DownloadCTA() {
         </h2>
 
         <p className="fade-up delay-200 text-lg text-white/60 max-w-xl mx-auto mb-12 leading-relaxed">
-          Mavrik is out now on Windows, free from the Microsoft Store. No subscription, no API key, no cloud. A native macOS build is on the way.
+          Mavrik is out now on Windows, free from the Microsoft Store. No
+          subscription, no API key, no cloud. A native macOS build is on the
+          way.
         </p>
 
         <div className="fade-up delay-300 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
-          {PLATFORMS.map((p) => (
-            <div key={p.name} className="relative bg-white/5 border border-white/10 rounded-xl p-5 text-left">
+          {PLATFORMS.map(p => (
+            <div
+              key={p.name}
+              className="relative bg-white/5 border border-white/10 rounded-xl p-5 text-left"
+            >
               <p.icon className="w-6 h-6 text-white/70 mb-3" />
-              <div className="text-white font-bold text-sm mb-0.5">{p.name}</div>
+              <div className="text-white font-bold text-sm mb-0.5">
+                {p.name}
+              </div>
               <div className="text-white/40 text-xs mb-3">{p.sub}</div>
               <span
                 className="inline-block text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
                 style={
                   p.available
-                    ? { background: "rgba(74, 222, 128, 0.15)", color: "#4ADE80" }
-                    : { background: "rgba(232, 93, 4, 0.15)", color: "var(--mavrik-orange-light)" }
+                    ? {
+                        background: "rgba(74, 222, 128, 0.15)",
+                        color: "#4ADE80",
+                      }
+                    : {
+                        background: "rgba(232, 93, 4, 0.15)",
+                        color: "var(--mavrik-orange-light)",
+                      }
                 }
               >
                 {p.available ? "Available Now" : "Coming Soon"}
@@ -81,10 +113,12 @@ export default function DownloadCTA() {
 
         <div className="fade-up delay-500 flex flex-wrap items-center justify-center gap-6 text-sm text-white/40">
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-green-400" /> Free forever tier
+            <CheckCircle2 className="w-4 h-4 text-green-400" /> Free forever
+            tier
           </span>
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-green-400" /> No account needed
+            <CheckCircle2 className="w-4 h-4 text-green-400" /> No account
+            needed
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle2 className="w-4 h-4 text-green-400" /> Zero telemetry

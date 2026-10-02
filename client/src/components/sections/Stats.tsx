@@ -29,7 +29,7 @@ const TIER_BARS = [
   { label: "Vision", pct: 13, count: "24 models" },
 ];
 
-const MAX_TIER_PCT = Math.max(...TIER_BARS.map((b) => b.pct));
+const MAX_TIER_PCT = Math.max(...TIER_BARS.map(b => b.pct));
 
 export default function Stats() {
   const ref = useRef<HTMLDivElement>(null);
@@ -64,33 +64,47 @@ export default function Stats() {
             aria-label="Explore the model library"
             className="hidden sm:flex w-12 h-12 rounded-full border border-border items-center justify-center hover:border-[var(--mavrik-orange)] hover:bg-[var(--mavrik-orange-muted)] transition-colors flex-shrink-0"
           >
-            <ArrowUpRight className="w-5 h-5" style={{ color: "var(--mavrik-orange)" }} />
+            <ArrowUpRight
+              className="w-5 h-5"
+              style={{ color: "var(--mavrik-orange)" }}
+            />
           </a>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="fade-up delay-100 rounded-2xl p-8" style={{ background: "var(--mavrik-orange-muted)" }}>
+          <div
+            className="fade-up delay-100 rounded-2xl p-8"
+            style={{ background: "var(--mavrik-orange-muted)" }}
+          >
             <div className="grid grid-cols-4 gap-4 items-end h-48 mb-6">
-              {TIER_BARS.map((bar) => (
-                <div key={bar.label} className="flex flex-col items-center justify-end h-full">
+              {TIER_BARS.map(bar => (
+                <div
+                  key={bar.label}
+                  className="flex flex-col items-center justify-end h-full"
+                >
                   <span className="text-sm font-bold mb-2">{bar.pct}%</span>
                   {/* Heights are normalised against the largest tier so the tallest
                       bar fills the track — fixed pixel heights left it stranded. */}
                   <div
                     className="w-full rounded-xl transition-[height] duration-700 ease-out"
                     style={{
-                      height: started ? `${(bar.pct / MAX_TIER_PCT) * 82}%` : "0%",
-                      background: "linear-gradient(180deg, var(--mavrik-orange-light) 0%, var(--mavrik-orange) 100%)",
+                      height: started
+                        ? `${(bar.pct / MAX_TIER_PCT) * 82}%`
+                        : "0%",
+                      background:
+                        "linear-gradient(180deg, var(--mavrik-orange-light) 0%, var(--mavrik-orange) 100%)",
                     }}
                   />
                 </div>
               ))}
             </div>
             <div className="grid grid-cols-4 gap-4 text-center">
-              {TIER_BARS.map((bar) => (
+              {TIER_BARS.map(bar => (
                 <div key={bar.label}>
                   <div className="text-xs font-bold">{bar.label}</div>
-                  <div className="text-[11px] text-muted-foreground">{bar.count}</div>
+                  <div className="text-[11px] text-muted-foreground">
+                    {bar.count}
+                  </div>
                 </div>
               ))}
             </div>
@@ -100,20 +114,30 @@ export default function Stats() {
             <div className="flex flex-wrap gap-10 mb-8">
               <div>
                 <div className="stat-number text-5xl mb-1">{c1}</div>
-                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">AI models included</div>
+                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">
+                  AI models included
+                </div>
               </div>
               <div>
-                <div className="stat-number text-5xl mb-1">{c2.toLocaleString()}+</div>
-                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">pages per PDF via Ghost Index</div>
+                <div className="stat-number text-5xl mb-1">
+                  {c2.toLocaleString()}+
+                </div>
+                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">
+                  pages per PDF via Ghost Index
+                </div>
               </div>
               <div>
                 <div className="stat-number text-5xl mb-1">0</div>
-                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">telemetry events, ever</div>
+                <div className="text-sm text-muted-foreground max-w-[8rem] leading-snug">
+                  telemetry events, ever
+                </div>
               </div>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Mavrik is built by a small team that doesn't want your data. Every model runs on your CPU or GPU, every file stays on disk, and every response is generated without a single network call.
+              Mavrik is built by a small team that doesn't want your data. Every
+              model runs on your CPU or GPU, every file stays on disk, and every
+              response is generated without a single network call.
             </p>
           </div>
         </div>
